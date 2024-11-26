@@ -1,0 +1,1 @@
+package co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository;

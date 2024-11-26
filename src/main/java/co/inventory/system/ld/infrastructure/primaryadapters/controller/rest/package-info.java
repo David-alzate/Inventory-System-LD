@@ -1,0 +1,1 @@
+package co.inventory.system.ld.infrastructure.primaryadapters.controller.rest;
