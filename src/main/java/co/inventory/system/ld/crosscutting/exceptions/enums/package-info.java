@@ -1,1 +1,0 @@
-package co.inventory.system.ld.crosscutting.exceptions.enums;
