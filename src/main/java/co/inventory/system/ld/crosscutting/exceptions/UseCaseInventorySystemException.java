@@ -24,5 +24,4 @@ public class UseCaseInventorySystemException extends InventorySystemException {
 			final String technicalMessage) {
 		return new UseCaseInventorySystemException(userMessage, technicalMessage, new Exception());
 	}
-
 }
