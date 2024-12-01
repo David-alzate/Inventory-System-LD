@@ -1,15 +1,15 @@
 package co.inventory.system.ld.domain.commons;
 
+import java.util.UUID;
+
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.domain.Domain;
 
-import java.util.UUID;
-
-public class IdTypeDomain extends Domain {
-
+public class StatusDomain extends Domain{
+	
 	private String name;
-
-	public IdTypeDomain(UUID id, String name) {
+	
+	public StatusDomain(UUID id, String name) {
 		super(id);
 		setName(name);
 	}
@@ -21,4 +21,6 @@ public class IdTypeDomain extends Domain {
 	public void setName(String name) {
 		this.name = TextHelper.applyTrim(name);
 	}
+	
+
 }
