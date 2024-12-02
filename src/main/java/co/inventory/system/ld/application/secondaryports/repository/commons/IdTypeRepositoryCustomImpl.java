@@ -1,11 +1,10 @@
-package co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.commons.impl;
+package co.inventory.system.ld.application.secondaryports.repository.commons;
 
 import co.inventory.system.ld.application.secondaryports.entity.commons.IdTypeEntity;
 import co.inventory.system.ld.crosscutting.exceptions.RepositoryInventorySystemException;
 import co.inventory.system.ld.crosscutting.helpers.ObjectHelper;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
-import co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.commons.IdTypeRepositoryCustom;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.Predicate;
 import java.util.ArrayList;
