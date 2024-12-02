@@ -5,28 +5,28 @@ import java.util.UUID;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
 
-public class StatusDTO {
+public class GetStatusDTO {
 
 	private UUID id;
 	private String name;
 
-	public StatusDTO() {
+	public GetStatusDTO() {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
 
-	public StatusDTO(final UUID id, final String name) {
+	public GetStatusDTO(final UUID id, final String name) {
 		super();
 		setId(id);
 		setName(name);
 	}
 
-	public static StatusDTO create(final UUID id, final String name) {
-		return new StatusDTO(id, name);
+	public static GetStatusDTO create(final UUID id, final String name) {
+		return new GetStatusDTO(id, name);
 	}
 
-	public static StatusDTO create() {
-		return new StatusDTO();
+	public static GetStatusDTO create() {
+		return new GetStatusDTO();
 	}
 
 	public UUID getId() {
