@@ -19,7 +19,7 @@ public class GetIdTypeImpl implements GetIdType {
     @Override
     public List<IdTypeDomain> execute(IdTypeDomain domain) {
         var idTypeEntity = IdTypeEntityMapper.INSTANCE.toEntity(domain);
-        var resultados = idTypeRepository.findByFilter(idTypeEntity);
-        return IdTypeEntityMapper.INSTANCE.toDomainCollection(resultados);
+        var results = idTypeRepository.findByFilter(idTypeEntity);
+        return IdTypeEntityMapper.INSTANCE.toDomainCollection(results);
     }
 }

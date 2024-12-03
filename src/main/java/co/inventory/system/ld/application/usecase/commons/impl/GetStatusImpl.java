@@ -22,8 +22,8 @@ public class GetStatusImpl implements GetStatus {
 	@Override
 	public List<StatusDomain> execute(StatusDomain domain) {
 		var statusEntity = StatusEntityMapper.INSTANCE.toEntity(domain);
-		var resultados = statusRepository.findByFilter(statusEntity);
-		return StatusEntityMapper.INSTANCE.toDomainCollection(resultados);
+		var results = statusRepository.findByFilter(statusEntity);
+		return StatusEntityMapper.INSTANCE.toDomainCollection(results);
 	}
 
 }
