@@ -1,17 +1,17 @@
-package co.inventory.system.ld.domain.commons;
+package co.inventory.system.ld.domain.users;
 
 import java.util.UUID;
 
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.domain.Domain;
 
-public class StatusDomain extends Domain {
+public class UserTypeDomain extends Domain {
 
 	private String name;
 
-	public StatusDomain(UUID id, String name) {
+	public UserTypeDomain(UUID id, String name) {
 		super(id);
-		setName(name);
+		this.name = name;
 	}
 
 	public String getName() {
