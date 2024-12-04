@@ -1,6 +1,6 @@
 package co.inventory.system.ld.application.primaryports.interactor.commons.impl;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetIdTypeDTO;
+import co.inventory.system.ld.application.primaryports.dto.commons.IdTypeDTO;
 import co.inventory.system.ld.application.primaryports.interactor.commons.GetIdTypeInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.commons.IdTypeDTOMapper;
 import co.inventory.system.ld.application.usecase.commons.GetIdType;
@@ -21,7 +21,7 @@ public class GetIdTypeInteractorImpl implements GetIdTypeInteractor {
     }
 
     @Override
-    public List<GetIdTypeDTO> execute(GetIdTypeDTO data) {
+    public List<IdTypeDTO> execute(IdTypeDTO data) {
         var idTypeDomain = IdTypeDTOMapper.INSTANCE.toDomain(data);
         var results = getIdType.execute(idTypeDomain);
         return IdTypeDTOMapper.INSTANCE.toDTOCollection(results);

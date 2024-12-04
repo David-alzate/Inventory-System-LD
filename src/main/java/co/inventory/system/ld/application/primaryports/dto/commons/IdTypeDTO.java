@@ -4,26 +4,26 @@ import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
 import java.util.UUID;
 
-public class GetIdTypeDTO {
+public class IdTypeDTO {
     private UUID id;
     private String name;
 
-    public GetIdTypeDTO() {
+    public IdTypeDTO() {
         setId(UUIDHelper.getDefault());
         setName(TextHelper.EMPTY);
     }
 
-    public GetIdTypeDTO(final UUID id, final String name) {
+    public IdTypeDTO(final UUID id, final String name) {
         setId(id);
         setName(name);
     }
 
-    public static final GetIdTypeDTO create(final UUID id, final String name) {
-       return new GetIdTypeDTO(id, name);
+    public static final IdTypeDTO create(final UUID id, final String name) {
+       return new IdTypeDTO(id, name);
     }
 
-    public static final GetIdTypeDTO create() {
-        return new GetIdTypeDTO();
+    public static final IdTypeDTO create() {
+        return new IdTypeDTO();
     }
 
     public UUID getId() {

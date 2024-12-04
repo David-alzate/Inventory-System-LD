@@ -1,12 +1,12 @@
 package co.inventory.system.ld.infrastructure.primaryadapters.controller.rest.commons;
 
+import co.inventory.system.ld.application.primaryports.dto.commons.StatusDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetStatusDTO;
 import co.inventory.system.ld.application.primaryports.interactor.commons.GetStatusInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.commons.GetStatusResponse;
@@ -27,7 +27,7 @@ public class StatusController {
 		var getStatuspeResponse = new GetStatusResponse();
 
 		try {
-			var statusDTO = GetStatusDTO.create();
+			var statusDTO = StatusDTO.create();
 			getStatuspeResponse.setDatos(getStatusInteractor.execute(statusDTO));
 			getStatuspeResponse.getMensajes().add("Se ha consultado los estados exitosamente");
 

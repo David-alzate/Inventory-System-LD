@@ -20,11 +20,11 @@ public class UserTypeDTO {
 		setName(name);
 	}
 	
-	public static final UserTypeDTO create(final UUID id, final String name) {
+	public static UserTypeDTO create(final UUID id, final String name) {
 		return new UserTypeDTO(id, name);
 	}
 	
-	public static final UserTypeDTO create() {
+	public static UserTypeDTO create() {
 		return new UserTypeDTO();
 	}
 

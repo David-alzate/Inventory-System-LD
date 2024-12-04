@@ -2,10 +2,10 @@ package co.inventory.system.ld.infrastructure.primaryadapters.controller.respons
 
 import java.util.ArrayList;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetStatusDTO;
+import co.inventory.system.ld.application.primaryports.dto.commons.StatusDTO;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.Response;
 
-public class GetStatusResponse extends Response<GetStatusDTO> {
+public class GetStatusResponse extends Response<StatusDTO> {
 
 	public GetStatusResponse() {
 		setMensajes(new ArrayList<String>());

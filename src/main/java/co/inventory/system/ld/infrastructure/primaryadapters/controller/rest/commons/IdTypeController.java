@@ -1,6 +1,6 @@
 package co.inventory.system.ld.infrastructure.primaryadapters.controller.rest.commons;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetIdTypeDTO;
+import co.inventory.system.ld.application.primaryports.dto.commons.IdTypeDTO;
 import co.inventory.system.ld.application.primaryports.interactor.commons.GetIdTypeInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.commons.GetIdTypeResponse;
@@ -26,7 +26,7 @@ public class IdTypeController {
 		var getIdTypeResponse = new GetIdTypeResponse();
 
 		try {
-			var idTypeDTO = GetIdTypeDTO.create();
+			var idTypeDTO = IdTypeDTO.create();
 			getIdTypeResponse.setDatos(getIdTypeInteractor.execute(idTypeDTO));
 			getIdTypeResponse.getMensajes().add("Se ha consultado los tipos de identificación exitosamente");
 

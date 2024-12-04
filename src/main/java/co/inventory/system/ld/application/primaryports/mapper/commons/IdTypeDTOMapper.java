@@ -1,6 +1,6 @@
 package co.inventory.system.ld.application.primaryports.mapper.commons;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetIdTypeDTO;
+import co.inventory.system.ld.application.primaryports.dto.commons.IdTypeDTO;
 import co.inventory.system.ld.domain.commons.IdTypeDomain;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -12,10 +12,10 @@ public interface IdTypeDTOMapper {
 
     IdTypeDTOMapper INSTANCE = Mappers.getMapper(IdTypeDTOMapper.class);
 
-    IdTypeDomain toDomain(GetIdTypeDTO dto);
+    IdTypeDomain toDomain(IdTypeDTO dto);
 
-    GetIdTypeDTO toDTO(IdTypeDomain domain);
+    IdTypeDTO toDTO(IdTypeDomain domain);
 
-    List<GetIdTypeDTO> toDTOCollection(List<IdTypeDomain> domain);
+    List<IdTypeDTO> toDTOCollection(List<IdTypeDomain> domain);
 
 }

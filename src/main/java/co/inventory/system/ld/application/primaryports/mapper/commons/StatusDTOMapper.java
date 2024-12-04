@@ -2,10 +2,10 @@ package co.inventory.system.ld.application.primaryports.mapper.commons;
 
 import java.util.List;
 
+import co.inventory.system.ld.application.primaryports.dto.commons.StatusDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetStatusDTO;
 import co.inventory.system.ld.domain.commons.StatusDomain;
 
 @Mapper
@@ -13,10 +13,10 @@ public interface StatusDTOMapper {
 	
 	StatusDTOMapper INSTANCE = Mappers.getMapper(StatusDTOMapper.class);
 
-    StatusDomain toDomain(GetStatusDTO dto);
+    StatusDomain toDomain(StatusDTO dto);
 
-    GetStatusDTO toDTO(StatusDomain domain);
+    StatusDTO toDTO(StatusDomain domain);
 
-    List<GetStatusDTO> toDTOCollection(List<StatusDomain> domain);
+    List<StatusDTO> toDTOCollection(List<StatusDomain> domain);
 
 }

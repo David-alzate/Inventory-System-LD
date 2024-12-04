@@ -1,7 +1,7 @@
 package co.inventory.system.ld.application.primaryports.dto.users;
 
-import co.inventory.system.ld.application.primaryports.dto.commons.GetIdTypeDTO;
-import co.inventory.system.ld.application.primaryports.dto.commons.GetStatusDTO;
+import co.inventory.system.ld.application.primaryports.dto.commons.IdTypeDTO;
+import co.inventory.system.ld.application.primaryports.dto.commons.StatusDTO;
 import co.inventory.system.ld.crosscutting.helpers.ObjectHelper;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 
@@ -9,26 +9,26 @@ public class RegisterNewUserDTO {
 
 	private String name;
 	private String lastName;
-	private GetIdTypeDTO idType;
+	private IdTypeDTO idType;
 	private Long idNumber;
 	private String email;
 	private UserTypeDTO userType;
-	private GetStatusDTO status;
+	private StatusDTO status;
 	private String password;
 
 	public RegisterNewUserDTO() {
 		setName(TextHelper.EMPTY);
 		setLastName(TextHelper.EMPTY);
-		setIdType(GetIdTypeDTO.create());
+		setIdType(IdTypeDTO.create());
 		setIdNumber(0L);
 		setEmail(TextHelper.EMPTY);
 		setUserType(UserTypeDTO.create());
-		setStatus(GetStatusDTO.create());
+		setStatus(StatusDTO.create());
 		setPassword(TextHelper.EMPTY);
 	}
 
-	public RegisterNewUserDTO(String name, String lastName, GetIdTypeDTO idType, Long idNumber, String email,
-			UserTypeDTO userType, GetStatusDTO status, String password) {
+	public RegisterNewUserDTO(String name, String lastName, IdTypeDTO idType, Long idNumber, String email,
+							  UserTypeDTO userType, StatusDTO status, String password) {
 		setName(name);
 		setLastName(lastName);
 		setIdType(idType);
@@ -39,8 +39,8 @@ public class RegisterNewUserDTO {
 		setPassword(password);
 	}
 
-	public static RegisterNewUserDTO create(String name, String lastName, GetIdTypeDTO idType, Long idNumber,
-			String email, UserTypeDTO userType, GetStatusDTO status, String password) {
+	public static RegisterNewUserDTO create(String name, String lastName, IdTypeDTO idType, Long idNumber,
+											String email, UserTypeDTO userType, StatusDTO status, String password) {
 		return new RegisterNewUserDTO(name, lastName, idType, idNumber, email, userType, status, password);
 	}
 
@@ -64,12 +64,12 @@ public class RegisterNewUserDTO {
 		this.lastName = TextHelper.applyTrim(lastName);
 	}
 
-	public GetIdTypeDTO getIdType() {
+	public IdTypeDTO getIdType() {
 		return idType;
 	}
 
-	public void setIdType(GetIdTypeDTO idType) {
-		this.idType = ObjectHelper.getDefault(idType, GetIdTypeDTO.create());
+	public void setIdType(IdTypeDTO idType) {
+		this.idType = ObjectHelper.getDefault(idType, IdTypeDTO.create());
 	}
 
 	public Long getIdNumber() {
@@ -96,12 +96,12 @@ public class RegisterNewUserDTO {
 		this.userType = ObjectHelper.getDefault(userType, UserTypeDTO.create());
 	}
 
-	public GetStatusDTO getStatus() {
+	public StatusDTO getStatus() {
 		return status;
 	}
 
-	public void setStatus(GetStatusDTO status) {
-		this.status = ObjectHelper.getDefault(status, GetStatusDTO.create());
+	public void setStatus(StatusDTO status) {
+		this.status = ObjectHelper.getDefault(status, StatusDTO.create());
 	}
 
 	public String getPassword() {
