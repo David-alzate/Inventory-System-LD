@@ -9,5 +9,4 @@ import co.inventory.system.ld.application.secondaryports.entity.commons.StatusEn
 @Repository
 public interface StatusRepositoryCustom {
 	List<StatusEntity> findByFilter(StatusEntity filter);
-
 }

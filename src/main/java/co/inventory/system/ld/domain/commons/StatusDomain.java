@@ -8,7 +8,7 @@ import co.inventory.system.ld.domain.Domain;
 public class StatusDomain extends Domain{
 	
 	private String name;
-	
+
 	public StatusDomain(UUID id, String name) {
 		super(id);
 		setName(name);
@@ -21,6 +21,8 @@ public class StatusDomain extends Domain{
 	public void setName(String name) {
 		this.name = TextHelper.applyTrim(name);
 	}
+
+
 	
 
 }
