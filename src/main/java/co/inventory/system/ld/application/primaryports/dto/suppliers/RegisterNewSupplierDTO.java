@@ -1,18 +1,18 @@
 package co.inventory.system.ld.application.primaryports.dto.suppliers;
 
+import co.inventory.system.ld.application.primaryports.dto.commons.StatusDTO;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
-import co.inventory.system.ld.domain.commons.StatusDomain;
 
 public class RegisterNewSupplierDTO {
     private  String name;
-    private StatusDomain status;
+    private StatusDTO status;
 
-    public RegisterNewSupplierDTO(String name, StatusDomain status) {
+    public RegisterNewSupplierDTO(String name, StatusDTO status) {
         setName(name);
         setStatus(status);
     }
 
-    public RegisterNewSupplierDTO create(String name, StatusDomain status) {
+    public RegisterNewSupplierDTO create(String name, StatusDTO status) {
         return new RegisterNewSupplierDTO(name, status);
     }
 
@@ -24,11 +24,11 @@ public class RegisterNewSupplierDTO {
         this.name =  TextHelper.applyTrim(name);
     }
 
-    public StatusDomain getStatus() {
+    public StatusDTO getStatus() {
         return status;
     }
 
-    public void setStatus(StatusDomain status) {
+    public void setStatus(StatusDTO status) {
         this.status = status;
     }
 }
