@@ -1,13 +1,17 @@
 package co.inventory.system.ld.domain.suppliers.exceptions;
 
-import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
-import co.inventory.system.ld.crosscutting.exceptions.enums.Layer;
+import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
 
-public class SupplierNameLengthIsNotValidException extends InventorySystemException {
+public class SupplierNameLengthIsNotValidException extends RuleInventorySystemException {
 
     private static final long serialVersionUID = 1L;
 
-    public SupplierNameLengthIsNotValidException(String userMessage, String technicalMessage, Exception rootException, Layer layer) {
-        super(userMessage, technicalMessage, rootException, layer);
+    public SupplierNameLengthIsNotValidException(String userMessage) {
+        super(userMessage, userMessage, new Exception());
+    }
+
+    public static final SupplierNameLengthIsNotValidException create() {
+        var userMessage = "Supplier name length is not valid";
+        return new SupplierNameLengthIsNotValidException(userMessage);
     }
 }

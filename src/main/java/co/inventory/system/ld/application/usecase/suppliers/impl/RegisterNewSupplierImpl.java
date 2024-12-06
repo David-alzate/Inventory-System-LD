@@ -5,7 +5,9 @@ import co.inventory.system.ld.application.secondaryports.mapper.commons.StatusEn
 import co.inventory.system.ld.application.secondaryports.repository.suppliers.SupplierRepository;
 import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplier;
 import co.inventory.system.ld.domain.suppliers.SupplierDomain;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RegisterNewSupplierImpl  implements RegisterNewSupplier {
 
     private final SupplierRepository supplierRepository;

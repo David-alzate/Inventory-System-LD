@@ -1,12 +1,17 @@
 package co.inventory.system.ld.domain.suppliers.rules.impl;
 
+import co.inventory.system.ld.crosscutting.helpers.TextHelper;
+import co.inventory.system.ld.domain.suppliers.exceptions.SupplierNameIsNullException;
 import co.inventory.system.ld.domain.suppliers.rules.SupplierNameIsNotNullRule;
+import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
+@Service
 public class SupplierNameIsNotNullRuleImpl implements SupplierNameIsNotNullRule {
-    @Override
-    public void validate(UUID data) {
 
+    @Override
+    public void validate(String data) {
+        if (TextHelper.isNull(data)) {
+            throw SupplierNameIsNullException.create();
+        }
     }
 }
