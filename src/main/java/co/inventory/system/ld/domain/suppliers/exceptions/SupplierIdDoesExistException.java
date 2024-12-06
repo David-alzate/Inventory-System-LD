@@ -10,7 +10,7 @@ public class SupplierIdDoesExistException extends RuleInventorySystemException {
     }
 
     public static final SupplierIdDoesExistException create() {
-        var userMessage = "El id del proveedor ya existe";
+        var userMessage = "El id del proveedor ya existe.";
         return new SupplierIdDoesExistException(userMessage);
     }
 
