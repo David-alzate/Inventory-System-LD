@@ -13,5 +13,5 @@ public class SupplierNameFormatIsNotValidException extends RuleInventorySystemEx
     public static final SupplierNameFormatIsNotValidException create() {
         var userMessage = "Supplier name format is not valid";
         return new SupplierNameFormatIsNotValidException(userMessage);
-    }
+    } 
 }
