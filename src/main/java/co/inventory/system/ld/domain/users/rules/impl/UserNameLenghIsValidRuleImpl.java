@@ -2,7 +2,9 @@ package co.inventory.system.ld.domain.users.rules.impl;
 
 import co.inventory.system.ld.domain.users.exceptions.UserNameLenghIsNotValidException;
 import co.inventory.system.ld.domain.users.rules.UserNameLenghIsValidRule;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserNameLenghIsValidRuleImpl implements UserNameLenghIsValidRule {
 
     private static final int MIN_NAME_LENGTH = 3;
