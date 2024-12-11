@@ -18,7 +18,7 @@ public class UserIdDoesNotExistsRuleImpl implements UserIdDoesNotExistsRule {
 
     @Override
     public void validate(UUID data) {
-        if (!userRepository.existsById(data)) {
+        if (userRepository.existsById(data)) {
             throw UserIdDoesExistsException.create();
         }
     }
