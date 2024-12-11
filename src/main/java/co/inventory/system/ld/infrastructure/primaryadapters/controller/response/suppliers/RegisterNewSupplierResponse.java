@@ -3,5 +3,5 @@ package co.inventory.system.ld.infrastructure.primaryadapters.controller.respons
 import co.inventory.system.ld.application.primaryports.dto.suppliers.RegisterNewSupplierDTO;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.Response;
 
-public class RegisterSupplierResponse extends Response<RegisterNewSupplierDTO> {
+public class RegisterNewSupplierResponse extends Response<RegisterNewSupplierDTO> {
 }

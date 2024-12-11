@@ -2,6 +2,7 @@ package co.inventory.system.ld.application.primaryports.interactor.suppliers.imp
 
 import co.inventory.system.ld.application.primaryports.dto.suppliers.RegisterNewSupplierDTO;
 import co.inventory.system.ld.application.primaryports.interactor.suppliers.RegisterNewSupplierInteractor;
+import co.inventory.system.ld.application.primaryports.mapper.suppliers.RegisterNewSupplierDTOMapper;
 import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplier;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
@@ -21,8 +22,8 @@ public class RegisterNewSupplierInteractorImpl implements RegisterNewSupplierInt
     @Override
     public void execute(RegisterNewSupplierDTO data) {
         try {
-            //var supplierDomain = SupplierDTOMapper.INSTANCE.toDomain(data);
-            //registerNewSupplier.execute(supplierDomain);
+            var supplierDomain = RegisterNewSupplierDTOMapper.INSTANCE.toDomain(data);
+            registerNewSupplier.execute(supplierDomain);
         } catch (InventorySystemException exception) {
             throw exception;
         } catch (Exception exception) {
@@ -30,7 +31,6 @@ public class RegisterNewSupplierInteractorImpl implements RegisterNewSupplierInt
             var technicalMessage = "Se ha presentado un error inesperado intentando registrar el proveedor";
 
             throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
-
         }
     }
 }
