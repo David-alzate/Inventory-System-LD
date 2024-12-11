@@ -11,13 +11,19 @@ import org.springframework.stereotype.Service;
 public class RegisterNewSupplierImpl  implements RegisterNewSupplier {
 
     private final SupplierRepository supplierRepository;
+    private final RegisterNewSupplierRulesValidatorImpl registerNewSupplierRulesValidatorImpl;
 
-    public RegisterNewSupplierImpl(SupplierRepository supplierRepository) {
+    public RegisterNewSupplierImpl(SupplierRepository supplierRepository, RegisterNewSupplierRulesValidatorImpl registerNewSupplierRulesValidatorImpl) {
+        this.registerNewSupplierRulesValidatorImpl=registerNewSupplierRulesValidatorImpl;
         this.supplierRepository = supplierRepository;
     }
 
+
     @Override
     public void execute(SupplierDomain domain) {
+
+        registerNewSupplierRulesValidatorImpl.validate(domain);
+
         final var supplierEntity= SupplierEntity.create().setId(domain.getId())
                 .setName(domain.getName())
                 .setStatus(StatusEntityMapper.INSTANCE.toEntity(domain.getStatus()));

@@ -21,26 +21,28 @@ public class SupplierController {
         this.registerNewSupplierInteractor = registerNewSupplierInteractor;
     }
 
-    @PostMapping("/registerNewSupplier")
-    public ResponseEntity<RegisterNewSupplierResponse> registerNewSupplier(@RequestBody RegisterNewSupplierDTO registerNewSupplierDTO) {
-        var httpStatusCode= HttpStatus.CREATED;
-        var registerNewSupplierResponse=new RegisterNewSupplierResponse();
+    @PostMapping
+    public ResponseEntity<RegisterNewSupplierResponse> create(@RequestBody RegisterNewSupplierDTO user) {
+
+        var httpStatusCode = HttpStatus.ACCEPTED;
+        var supplierResponse = new RegisterNewSupplierResponse();
 
         try {
-            registerNewSupplierInteractor.execute(registerNewSupplierDTO);
-            registerNewSupplierResponse.getMensajes().add("Proveedor registrado exitosamente");
+            registerNewSupplierInteractor.execute(user);
+            supplierResponse.getMensajes().add("Proveedor creado exitosamente");
 
         } catch (final InventorySystemException excepcion) {
             httpStatusCode = HttpStatus.BAD_REQUEST;
-            registerNewSupplierResponse.getMensajes().add(excepcion.getUserMessage());
-
-
+            supplierResponse.getMensajes().add(excepcion.getUserMessage());
         } catch (final Exception excepcion) {
             httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
-            var mensajeUsuario ="Hubo un problema tratando de registrar el proveedor";
-            registerNewSupplierResponse.getMensajes().add(mensajeUsuario);
+
+            var mensajeUsuario = "Se ha presentado un problema tratando de registar el nuevo proveedor";
+            supplierResponse.getMensajes().add(mensajeUsuario);
+
         }
 
-        return new ResponseEntity<>(registerNewSupplierResponse, httpStatusCode);
+        return new ResponseEntity<>(supplierResponse, httpStatusCode);
+
     }
 }
