@@ -9,9 +9,9 @@ import org.mapstruct.factory.Mappers;
 import java.util.List;
 
 @Mapper
-public interface RegisterNewUserEntityMapper {
+public interface UserEntityMapper {
 
-    RegisterNewUserEntityMapper INSTANCE = Mappers.getMapper(RegisterNewUserEntityMapper.class);
+    UserEntityMapper INSTANCE = Mappers.getMapper(UserEntityMapper.class);
 
     UserEntity toEntity(UserDomain domain);
 

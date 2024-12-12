@@ -1,12 +1,16 @@
 package co.inventory.system.ld.application.primaryports.dto.users;
 
+import java.util.UUID;
+
 import co.inventory.system.ld.application.primaryports.dto.commons.IdTypeDTO;
 import co.inventory.system.ld.application.primaryports.dto.commons.StatusDTO;
 import co.inventory.system.ld.crosscutting.helpers.ObjectHelper;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
+import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
 
-public class RegisterNewUserDTO {
+public class UserDTO {
 
+	private UUID id;
 	private String name;
 	private String lastName;
 	private IdTypeDTO idType;
@@ -16,7 +20,8 @@ public class RegisterNewUserDTO {
 	private StatusDTO status;
 	private String password;
 
-	public RegisterNewUserDTO() {
+	public UserDTO() {
+		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 		setLastName(TextHelper.EMPTY);
 		setIdType(IdTypeDTO.create());
@@ -27,8 +32,9 @@ public class RegisterNewUserDTO {
 		setPassword(TextHelper.EMPTY);
 	}
 
-	public RegisterNewUserDTO(String name, String lastName, IdTypeDTO idType, Long idNumber, String email,
+	public UserDTO(UUID id, String name, String lastName, IdTypeDTO idType, Long idNumber, String email,
 			UserTypeDTO userType, StatusDTO status, String password) {
+		setId(id);
 		setName(name);
 		setLastName(lastName);
 		setIdType(idType);
@@ -39,13 +45,21 @@ public class RegisterNewUserDTO {
 		setPassword(password);
 	}
 
-	public static RegisterNewUserDTO create(String name, String lastName, IdTypeDTO idType, Long idNumber, String email,
+	public static UserDTO create(UUID id, String name, String lastName, IdTypeDTO idType, Long idNumber, String email,
 			UserTypeDTO userType, StatusDTO status, String password) {
-		return new RegisterNewUserDTO(name, lastName, idType, idNumber, email, userType, status, password);
+		return new UserDTO(id, name, lastName, idType, idNumber, email, userType, status, password);
 	}
 
-	public static RegisterNewUserDTO create() {
-		return new RegisterNewUserDTO();
+	public static UserDTO create() {
+		return new UserDTO();
+	}
+
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
 	}
 
 	public String getName() {

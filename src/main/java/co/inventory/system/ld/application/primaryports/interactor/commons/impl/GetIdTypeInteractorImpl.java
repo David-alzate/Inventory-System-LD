@@ -14,16 +14,16 @@ import java.util.List;
 
 public class GetIdTypeInteractorImpl implements GetIdTypeInteractor {
 
-    private final GetIdType getIdType;
+	private final GetIdType getIdType;
 
-    public GetIdTypeInteractorImpl(GetIdType getIdType) {
-        this.getIdType = getIdType;
-    }
+	public GetIdTypeInteractorImpl(GetIdType getIdType) {
+		this.getIdType = getIdType;
+	}
 
-    @Override
-    public List<IdTypeDTO> execute(IdTypeDTO data) {
-        var idTypeDomain = IdTypeDTOMapper.INSTANCE.toDomain(data);
-        var results = getIdType.execute(idTypeDomain);
-        return IdTypeDTOMapper.INSTANCE.toDTOCollection(results);
-    }
+	@Override
+	public List<IdTypeDTO> execute(IdTypeDTO data) {
+		var idTypeDomain = IdTypeDTOMapper.INSTANCE.toDomain(data);
+		var results = getIdType.execute(idTypeDomain);
+		return IdTypeDTOMapper.INSTANCE.toDTOCollection(results);
+	}
 }
