@@ -4,6 +4,7 @@ import co.inventory.system.ld.application.secondaryports.entity.suppliers.Suppli
 import co.inventory.system.ld.application.secondaryports.mapper.commons.StatusEntityMapper;
 import co.inventory.system.ld.application.secondaryports.repository.suppliers.SupplierRepository;
 import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplier;
+import co.inventory.system.ld.application.usecase.suppliers.impl.rulesvalidatorimpl.RegisterNewSupplierRulesValidatorImpl;
 import co.inventory.system.ld.domain.suppliers.SupplierDomain;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package co.inventory.system.ld.application.usecase.suppliers.impl;
+package co.inventory.system.ld.application.usecase.suppliers.impl.rulesvalidatorimpl;
 
-import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplierNameRulesValidator;
+import co.inventory.system.ld.application.usecase.suppliers.rulesvalidator.RegisterNewSupplierNameRulesValidator;
 import co.inventory.system.ld.domain.suppliers.SupplierDomain;
 import co.inventory.system.ld.domain.suppliers.rules.SupplierNameFormatIsValidRule;
 import co.inventory.system.ld.domain.suppliers.rules.SupplierNameIsNotEmptyRule;

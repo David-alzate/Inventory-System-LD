@@ -1,6 +1,6 @@
-package co.inventory.system.ld.application.usecase.suppliers.impl;
+package co.inventory.system.ld.application.usecase.suppliers.impl.rulesvalidatorimpl;
 
-import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplierIdRulesValidator;
+import co.inventory.system.ld.application.usecase.suppliers.rulesvalidator.RegisterNewSupplierIdRulesValidator;
 import co.inventory.system.ld.domain.suppliers.SupplierDomain;
 import co.inventory.system.ld.domain.suppliers.exceptions.SupplierIdDoesExistException;
 import co.inventory.system.ld.domain.suppliers.rules.SupplierIdDoesNotExistsRule;

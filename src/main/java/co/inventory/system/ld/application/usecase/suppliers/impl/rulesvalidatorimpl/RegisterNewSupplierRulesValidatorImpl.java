@@ -1,8 +1,8 @@
-package co.inventory.system.ld.application.usecase.suppliers.impl;
+package co.inventory.system.ld.application.usecase.suppliers.impl.rulesvalidatorimpl;
 
-import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplierIdRulesValidator;
-import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplierNameRulesValidator;
-import co.inventory.system.ld.application.usecase.suppliers.RegisterNewSupplierRulesValidator;
+import co.inventory.system.ld.application.usecase.suppliers.rulesvalidator.RegisterNewSupplierIdRulesValidator;
+import co.inventory.system.ld.application.usecase.suppliers.rulesvalidator.RegisterNewSupplierNameRulesValidator;
+import co.inventory.system.ld.application.usecase.suppliers.rulesvalidator.RegisterNewSupplierRulesValidator;
 import co.inventory.system.ld.domain.suppliers.SupplierDomain;
 import org.springframework.stereotype.Service;
 
