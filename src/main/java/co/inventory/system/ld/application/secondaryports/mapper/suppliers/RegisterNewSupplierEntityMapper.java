@@ -1,16 +1,13 @@
 package co.inventory.system.ld.application.secondaryports.mapper.suppliers;
 
-
 import co.inventory.system.ld.application.secondaryports.entity.suppliers.SupplierEntity;
 import co.inventory.system.ld.domain.suppliers.SupplierDomain;
-import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper
-public interface SupplierEntityMapper {
-    SupplierEntityMapper INSTANCE = Mappers.getMapper(SupplierEntityMapper.class);
+public interface RegisterNewSupplierEntityMapper {
+    RegisterNewSupplierEntityMapper INSTANCE = Mappers.getMapper(RegisterNewSupplierEntityMapper.class);
 
     SupplierEntity toEntity(SupplierDomain domain);
 
