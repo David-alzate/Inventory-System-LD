@@ -8,8 +8,10 @@ import co.inventory.system.ld.application.primaryports.dto.users.UserDTO;
 import co.inventory.system.ld.application.primaryports.interactor.users.GetUserInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.users.UserDTOMapper;
 import co.inventory.system.ld.application.usecase.users.GetUser;
+import jakarta.transaction.Transactional;
 
 @Service
+@Transactional
 public class GetUserInteractorImpl implements GetUserInteractor {
 
 	private final GetUser getUser;

@@ -29,7 +29,7 @@ public class UserController {
 	}
 
 	@PostMapping
-	public ResponseEntity<RegisterNewUserResponse> create(@RequestBody RegisterNewUserDTO user) {
+	public ResponseEntity<RegisterNewUserResponse> createUser(@RequestBody RegisterNewUserDTO user) {
 
 		var httpStatusCode = HttpStatus.ACCEPTED;
 		var userResponse = new RegisterNewUserResponse();
@@ -54,7 +54,7 @@ public class UserController {
 	}
 
 	@GetMapping
-	public ResponseEntity<UserResponse> consultarRolEmpleado() {
+	public ResponseEntity<UserResponse> getUsers() {
 
 		var httpStatusCode = HttpStatus.ACCEPTED;
 		var userResponse = new UserResponse();
@@ -70,7 +70,7 @@ public class UserController {
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "se ha presentado un problema tratando de consultar los Usuarios";
+			var mensajeUsuario = "Se ha presentado un problema tratando de consultar los Usuarios";
 			userResponse.getMensajes().add(mensajeUsuario);
 		}
 
