@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserEmailRulesValidator;
 import co.inventory.system.ld.domain.users.UserDomain;
-import co.inventory.system.ld.domain.users.rules.UserEmailFormatIsValidRule;
+import co.inventory.system.ld.domain.users.rules.user.UserEmailFormatIsValidRule;
 
 @Service
 public class RegisterNewUserEmailRulesValidatorImpl implements RegisterNewUserEmailRulesValidator {

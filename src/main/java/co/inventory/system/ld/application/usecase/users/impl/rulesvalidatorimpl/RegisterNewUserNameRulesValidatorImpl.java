@@ -2,10 +2,11 @@ package co.inventory.system.ld.application.usecase.users.impl.rulesvalidatorimpl
 
 import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserNameRulesValidator;
 import co.inventory.system.ld.domain.users.UserDomain;
-import co.inventory.system.ld.domain.users.rules.UserNameFormatIsValidRule;
-import co.inventory.system.ld.domain.users.rules.UserNameIsNotEmpyRule;
-import co.inventory.system.ld.domain.users.rules.UserNameIsNotNullRule;
-import co.inventory.system.ld.domain.users.rules.UserNameLenghIsValidRule;
+import co.inventory.system.ld.domain.users.rules.user.UserNameFormatIsValidRule;
+import co.inventory.system.ld.domain.users.rules.user.UserNameIsNotEmpyRule;
+import co.inventory.system.ld.domain.users.rules.user.UserNameIsNotNullRule;
+import co.inventory.system.ld.domain.users.rules.user.UserNameLenghIsValidRule;
+
 import org.springframework.stereotype.Service;
 
 @Service

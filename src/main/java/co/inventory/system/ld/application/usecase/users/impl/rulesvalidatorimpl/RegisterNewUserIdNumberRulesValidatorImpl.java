@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserIdNumberRulesValidator;
 import co.inventory.system.ld.domain.users.UserDomain;
-import co.inventory.system.ld.domain.users.rules.UserIdNumberForUserTypeDoesNotExistsRule;
+import co.inventory.system.ld.domain.users.rules.user.UserIdNumberForUserTypeDoesNotExistsRule;
 
 @Service
 public class RegisterNewUserIdNumberRulesValidatorImpl implements RegisterNewUserIdNumberRulesValidator {

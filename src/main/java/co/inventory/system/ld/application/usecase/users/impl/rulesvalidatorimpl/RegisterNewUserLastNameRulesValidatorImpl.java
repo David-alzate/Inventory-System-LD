@@ -4,10 +4,10 @@ import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserLastNameRulesValidator;
 import co.inventory.system.ld.domain.users.UserDomain;
-import co.inventory.system.ld.domain.users.rules.UserLastNameFormatIsValidRule;
-import co.inventory.system.ld.domain.users.rules.UserLastNameIsNotEmpyRule;
-import co.inventory.system.ld.domain.users.rules.UserLastNameIsNotNullRule;
-import co.inventory.system.ld.domain.users.rules.UserNameLenghIsValidRule;
+import co.inventory.system.ld.domain.users.rules.user.UserLastNameFormatIsValidRule;
+import co.inventory.system.ld.domain.users.rules.user.UserLastNameIsNotEmpyRule;
+import co.inventory.system.ld.domain.users.rules.user.UserLastNameIsNotNullRule;
+import co.inventory.system.ld.domain.users.rules.user.UserNameLenghIsValidRule;
 
 @Service
 public class RegisterNewUserLastNameRulesValidatorImpl implements RegisterNewUserLastNameRulesValidator {
