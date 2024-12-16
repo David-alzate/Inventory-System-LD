@@ -9,7 +9,7 @@ public class IdTypeIdIsDefaultValueException extends RuleInventorySystemExceptio
     }
 
     public static final IdTypeIdIsDefaultValueException create(){
-        var userMessage = "El id del idType no puede ser el valor por defecto";
+        var userMessage = "El id del tipo de identificacion no puede ser el valor por defecto";
         return new IdTypeIdIsDefaultValueException(userMessage);
     }
 }

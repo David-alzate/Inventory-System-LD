@@ -9,7 +9,7 @@ public class IdTypeIdIsNullException extends RuleInventorySystemException {
     }
 
     public static final IdTypeIdIsNullException create(){
-        var userMessage = "El id del idType no puede ser nulo";
+        var userMessage = "El id del tipo de identificacion no puede ser nulo";
         return new IdTypeIdIsNullException(userMessage);
     }
 }

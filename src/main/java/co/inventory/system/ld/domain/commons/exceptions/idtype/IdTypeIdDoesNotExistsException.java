@@ -9,7 +9,7 @@ public class IdTypeIdDoesNotExistsException extends RuleInventorySystemException
     }
 
     public static final IdTypeIdDoesNotExistsException create() {
-        var userMessage = "El id del idType no existe.";
+        var userMessage = "El id del tipo de identificacion no existe.";
         return new IdTypeIdDoesNotExistsException(userMessage);
     }
 }
