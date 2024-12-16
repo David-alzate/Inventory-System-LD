@@ -1,6 +1,8 @@
 package co.inventory.system.ld.application.secondaryports.repository.users;
 
 import co.inventory.system.ld.application.secondaryports.entity.users.UserEntity;
+import co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.users.UserRepositoryCustom;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

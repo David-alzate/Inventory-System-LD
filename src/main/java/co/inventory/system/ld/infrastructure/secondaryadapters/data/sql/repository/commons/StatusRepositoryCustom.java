@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.secondaryports.repository.commons;
+package co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.commons;
 
 import java.util.List;
 

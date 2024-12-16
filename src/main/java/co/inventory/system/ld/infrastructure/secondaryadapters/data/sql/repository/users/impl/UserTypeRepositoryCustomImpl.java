@@ -1,44 +1,40 @@
-package co.inventory.system.ld.application.secondaryports.repository.suppliers;
+package co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.users.impl;
 
-import co.inventory.system.ld.application.secondaryports.entity.suppliers.SupplierEntity;
+import co.inventory.system.ld.application.secondaryports.entity.users.UserTypeEntity;
 import co.inventory.system.ld.crosscutting.exceptions.RepositoryInventorySystemException;
 import co.inventory.system.ld.crosscutting.helpers.ObjectHelper;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
+import co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.users.UserTypeRepositoryCustom;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.Predicate;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupplierRepositoryCustomImpl implements SupplierRepositoryCustom{
+public class UserTypeRepositoryCustomImpl implements UserTypeRepositoryCustom{
 
     private final EntityManager entityManager;
 
-    public SupplierRepositoryCustomImpl(EntityManager entityManager) {
+    public UserTypeRepositoryCustomImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
 
     @Override
-    public List<SupplierEntity> findByFilter(SupplierEntity filter) {
+    public List<UserTypeEntity> findByFilter(UserTypeEntity filter) {
         try {
             var criteriaBuilder = entityManager.getCriteriaBuilder();
-            var query = criteriaBuilder.createQuery(SupplierEntity.class);
-            var result = query.from(SupplierEntity.class);
+            var query = criteriaBuilder.createQuery(UserTypeEntity.class);
+            var result = query.from(UserTypeEntity.class);
 
             var predicates = new ArrayList<Predicate>();
 
             if (!ObjectHelper.isNull(filter)) {
-
                 if (!UUIDHelper.isDefault(filter.getId())) {
                     predicates.add(criteriaBuilder.equal(result.get("id"), filter.getId()));
                 }
                 if (!TextHelper.isEmpty(filter.getName())) {
-                    predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("name")),
-                            filter.getName().toUpperCase()));
-                }
-                if (!UUIDHelper.isDefault(filter.getStatus().getId())) {
-                    predicates.add(criteriaBuilder.equal(result.get("status").get("id"), filter.getStatus().getId()));
+                    predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("name")), filter.getName().toUpperCase()));
                 }
             }
 

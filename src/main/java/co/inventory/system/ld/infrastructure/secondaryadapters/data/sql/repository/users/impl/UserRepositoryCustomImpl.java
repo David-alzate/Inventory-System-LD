@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.secondaryports.repository.users;
+package co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.users.impl;
 
 import co.inventory.system.ld.application.secondaryports.entity.users.UserEntity;
 import co.inventory.system.ld.crosscutting.exceptions.RepositoryInventorySystemException;
@@ -6,6 +6,7 @@ import co.inventory.system.ld.crosscutting.helpers.NumericHelper;
 import co.inventory.system.ld.crosscutting.helpers.ObjectHelper;
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
+import co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.users.UserRepositoryCustom;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.criteria.Predicate;
 

@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "co.inventory.system.ld" })
-@EnableJpaRepositories("co.inventory.system.ld.application.secondaryports.repository")
+@EnableJpaRepositories("co.inventory.system.ld")
 @EntityScan("co.inventory.system.ld.application.secondaryports.entity")
 public class InventorySystemLdApplication {
 

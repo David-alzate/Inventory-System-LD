@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.secondaryports.repository.suppliers;
+package co.inventory.system.ld.infrastructure.secondaryadapters.data.sql.repository.suppliers;
 
 import co.inventory.system.ld.application.secondaryports.entity.suppliers.SupplierEntity;
 import org.springframework.stereotype.Repository;
