@@ -2,7 +2,6 @@ package co.inventory.system.ld.domain.users.rules.impl.user;
 
 import co.inventory.system.ld.domain.users.exceptions.user.UserNameLenghIsNotValidException;
 import co.inventory.system.ld.domain.users.rules.user.UserNameLenghIsValidRule;
-
 import org.springframework.stereotype.Service;
 
 @Service

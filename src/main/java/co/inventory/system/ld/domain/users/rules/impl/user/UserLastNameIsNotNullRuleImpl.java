@@ -15,5 +15,4 @@ public class UserLastNameIsNotNullRuleImpl implements UserLastNameIsNotNullRule 
 			throw UserLastNameIsNullException.create();
 		}
 	}
-
 }
