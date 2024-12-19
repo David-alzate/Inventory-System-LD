@@ -25,5 +25,4 @@ public class RegisterNewUserIdNumberRulesValidatorImpl implements RegisterNewUse
 		userIdNumberForUserTypeDoesNotExistsRule.validate(data);
 		userIdNumberLenghIsValidRule.validate(data);
 	}
-
 }
