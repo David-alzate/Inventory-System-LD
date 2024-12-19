@@ -37,25 +37,25 @@ public class UserRepositoryCustomImpl implements UserRepositoryCustom {
                 if (!TextHelper.isEmpty(filter.getName())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("name")), filter.getName().toUpperCase()));
                 }
-                if (!TextHelper.isEmpty(filter.getName())) {
+                if (!TextHelper.isEmpty(filter.getLastName())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("lastName")), filter.getLastName().toUpperCase()));
                 }
-                if (!UUIDHelper.isDefault(filter.getStatus().getId())) {
+                if (!UUIDHelper.isDefault(filter.getIdType().getId())) {
                     predicates.add(criteriaBuilder.equal(result.get("idType").get("id"), filter.getIdType().getId()));
                 }
                 if (!NumericHelper.isEqual(filter.getIdNumber(), 0L)) {
                     predicates.add(criteriaBuilder.equal(result.get("idNumber"), filter.getIdNumber()));
                 }
-                if (!TextHelper.isEmpty(filter.getName())) {
+                if (!TextHelper.isEmpty(filter.getEmail())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("email")), filter.getEmail().toUpperCase()));
                 }
-                if (!UUIDHelper.isDefault(filter.getStatus().getId())) {
+                if (!UUIDHelper.isDefault(filter.getUserType().getId())) {
                     predicates.add(criteriaBuilder.equal(result.get("userType").get("id"), filter.getUserType().getId()));
                 }
                 if (!UUIDHelper.isDefault(filter.getStatus().getId())) {
                     predicates.add(criteriaBuilder.equal(result.get("status").get("id"), filter.getStatus().getId()));
                 }
-                if (!TextHelper.isEmpty(filter.getName())) {
+                if (!TextHelper.isEmpty(filter.getPassword())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("password")), filter.getPassword().toUpperCase()));
                 }
             }

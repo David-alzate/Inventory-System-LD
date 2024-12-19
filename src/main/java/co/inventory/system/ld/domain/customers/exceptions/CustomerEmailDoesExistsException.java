@@ -4,6 +4,8 @@ import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemExcepti
 
 public class CustomerEmailDoesExistsException extends RuleInventorySystemException {
 
+    private static final long serialVersionUID = 1L;
+
     public CustomerEmailDoesExistsException(String userMessage) {
         super(userMessage, userMessage, new Exception());
     }

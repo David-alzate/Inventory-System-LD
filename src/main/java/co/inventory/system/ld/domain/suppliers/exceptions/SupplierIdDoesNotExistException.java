@@ -4,9 +4,12 @@ import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemExcepti
 
 public class SupplierIdDoesNotExistException extends RuleInventorySystemException {
 
+    private static final long serialVersionUID = 1L;
+
     public SupplierIdDoesNotExistException(String userMessage) {
         super(userMessage, userMessage, new Exception());
     }
+
 
     public static final SupplierIdDoesNotExistException create() {
         var userMessage = "El id del proveedor no existe";

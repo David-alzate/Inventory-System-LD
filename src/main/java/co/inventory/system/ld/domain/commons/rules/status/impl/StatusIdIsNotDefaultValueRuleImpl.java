@@ -1,11 +1,9 @@
 package co.inventory.system.ld.domain.commons.rules.status.impl;
 
-import co.inventory.system.ld.application.secondaryports.repository.commons.StatusRepository;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
 import co.inventory.system.ld.domain.commons.exceptions.status.StatusIdIsDefaultValueException;
 import co.inventory.system.ld.domain.commons.rules.status.StatusIdIsNotDefaultValueRule;
 import org.springframework.stereotype.Service;
-
 import java.util.UUID;
 
 @Service
