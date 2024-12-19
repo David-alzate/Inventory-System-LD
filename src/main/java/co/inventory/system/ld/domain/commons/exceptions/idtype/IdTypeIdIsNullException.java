@@ -3,6 +3,8 @@ package co.inventory.system.ld.domain.commons.exceptions.idtype;
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
 
 public class IdTypeIdIsNullException extends RuleInventorySystemException {
+	
+	private static final long serialVersionUID = 1L;
 
     public IdTypeIdIsNullException(String userMessage) {
         super(userMessage, userMessage, new Exception());

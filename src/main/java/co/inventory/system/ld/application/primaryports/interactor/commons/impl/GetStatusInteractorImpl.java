@@ -10,8 +10,8 @@ import co.inventory.system.ld.application.primaryports.mapper.commons.StatusDTOM
 import co.inventory.system.ld.application.usecase.commons.GetStatus;
 import jakarta.transaction.Transactional;
 
-@Transactional
 @Service
+@Transactional
 public class GetStatusInteractorImpl implements GetStatusInteractor {
 
     private final GetStatus getStatus;

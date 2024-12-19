@@ -5,9 +5,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class InventorySystemLdApplicationTests {
-
+	
 	@Test
 	void contextLoads() {
-	}
+   // document why this method is empty
+ }
 
 }

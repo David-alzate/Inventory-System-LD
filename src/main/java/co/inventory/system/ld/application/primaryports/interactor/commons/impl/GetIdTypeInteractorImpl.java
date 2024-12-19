@@ -11,7 +11,6 @@ import java.util.List;
 
 @Service
 @Transactional
-
 public class GetIdTypeInteractorImpl implements GetIdTypeInteractor {
 
 	private final GetIdType getIdType;

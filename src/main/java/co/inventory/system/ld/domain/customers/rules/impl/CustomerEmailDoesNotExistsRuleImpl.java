@@ -17,6 +17,7 @@ public class CustomerEmailDoesNotExistsRuleImpl implements CustomerEmailDoesNotE
 
     @Override
     public void validate(String data) {
+    	
         var customerFilter = CustomerEntity.create().setEmail(data);
         var results = customerRepository.findByFilter(customerFilter);
 

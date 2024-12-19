@@ -14,59 +14,58 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/customers/api/v1/customer")
 public class CustomerController {
-    private final RegisterNewCustomerInteractor registerNewCustomerInteractor;
-    private final GetCustomerInteractor getCustomerInteractor;
+	private final RegisterNewCustomerInteractor registerNewCustomerInteractor;
+	private final GetCustomerInteractor getCustomerInteractor;
 
-    public CustomerController(RegisterNewCustomerInteractor registerNewCustomerInteractor, GetCustomerInteractor getCustomerInteractor) {
-        this.registerNewCustomerInteractor = registerNewCustomerInteractor;
-        this.getCustomerInteractor = getCustomerInteractor;
-    }
+	public CustomerController(RegisterNewCustomerInteractor registerNewCustomerInteractor,
+			GetCustomerInteractor getCustomerInteractor) {
+		this.registerNewCustomerInteractor = registerNewCustomerInteractor;
+		this.getCustomerInteractor = getCustomerInteractor;
+	}
 
-    @PostMapping
-    public ResponseEntity<RegisterNewCustomerResponse> create(@RequestBody RegisterNewCustomerDTO customer) {
+	@PostMapping
+	public ResponseEntity<RegisterNewCustomerResponse> create(@RequestBody RegisterNewCustomerDTO customer) {
 
-        var httpStatusCode = HttpStatus.ACCEPTED;
-        var customerResponse = new RegisterNewCustomerResponse();
+		var httpStatusCode = HttpStatus.ACCEPTED;
+		var customerResponse = new RegisterNewCustomerResponse();
 
-        try {
-            registerNewCustomerInteractor.execute(customer);
-            customerResponse.getMensajes().add("Cliente creado exitosamente");
+		try {
+			registerNewCustomerInteractor.execute(customer);
+			customerResponse.getMensajes().add("Cliente creado exitosamente");
 
-        } catch (final InventorySystemException excepcion) {
-            httpStatusCode = HttpStatus.BAD_REQUEST;
-            customerResponse.getMensajes().add(excepcion.getUserMessage());
-            excepcion.printStackTrace();
-        } catch (final Exception excepcion) {
-            httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
-            var userMessage = "Se ha presentado un problema tratando de registar el nuevo cliente";
-            customerResponse.getMensajes().add(userMessage);
-            excepcion.printStackTrace();
-        }
+		} catch (final InventorySystemException excepcion) {
+			httpStatusCode = HttpStatus.BAD_REQUEST;
+			customerResponse.getMensajes().add(excepcion.getUserMessage());
+		} catch (final Exception excepcion) {
+			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
+			var userMessage = "Se ha presentado un problema tratando de registar el nuevo cliente";
+			customerResponse.getMensajes().add(userMessage);
+		}
 
-        return new ResponseEntity<>(customerResponse, httpStatusCode);
-    }
+		return new ResponseEntity<>(customerResponse, httpStatusCode);
+	}
 
-    @GetMapping
-    public ResponseEntity<GetCustomersResponse> getCustomers() {
+	@GetMapping
+	public ResponseEntity<GetCustomersResponse> getCustomers() {
 
-        var httpStatusCode = HttpStatus.ACCEPTED;
-        var customersResponse = new GetCustomersResponse();
+		var httpStatusCode = HttpStatus.ACCEPTED;
+		var customersResponse = new GetCustomersResponse();
 
-        try {
-            var customerDTO = CustomerDTO.create();
-            customersResponse.setDatos(getCustomerInteractor.execute(customerDTO));
-            customersResponse.getMensajes().add("Clientes Consultados exitosamente");
+		try {
+			var customerDTO = CustomerDTO.create();
+			customersResponse.setDatos(getCustomerInteractor.execute(customerDTO));
+			customersResponse.getMensajes().add("Clientes Consultados exitosamente");
 
-        } catch (final InventorySystemException excepcion) {
-            httpStatusCode = HttpStatus.BAD_REQUEST;
-            customersResponse.getMensajes().add(excepcion.getMessage());
-        } catch (final Exception excepcion) {
-            httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
+		} catch (final InventorySystemException excepcion) {
+			httpStatusCode = HttpStatus.BAD_REQUEST;
+			customersResponse.getMensajes().add(excepcion.getMessage());
+		} catch (final Exception excepcion) {
+			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-            var userMessage = "Se ha presentado un problema tratando de consultar los clientes";
-            customersResponse.getMensajes().add(userMessage);
-        }
+			var userMessage = "Se ha presentado un problema tratando de consultar los clientes";
+			customersResponse.getMensajes().add(userMessage);
+		}
 
-        return new ResponseEntity<>(customersResponse, httpStatusCode);
-    }
+		return new ResponseEntity<>(customersResponse, httpStatusCode);
+	}
 }

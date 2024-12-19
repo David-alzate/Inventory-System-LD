@@ -47,7 +47,7 @@ public class CustomerRepositoryCustomImpl implements CustomerRepositoryCustom {
                 if (!NumericHelper.isEqual(filter.getIdNumber(), 0L)) {
                     predicates.add(criteriaBuilder.equal(result.get("idNumber"), filter.getIdNumber()));
                 }
-                if (!TextHelper.isEmpty(filter.getName())) {
+                if (!TextHelper.isEmpty(filter.getEmail())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("email")), filter.getEmail().toUpperCase()));
                 }
             }
