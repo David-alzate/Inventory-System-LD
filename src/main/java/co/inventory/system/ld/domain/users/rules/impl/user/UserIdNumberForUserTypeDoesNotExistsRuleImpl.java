@@ -24,9 +24,9 @@ public class UserIdNumberForUserTypeDoesNotExistsRuleImpl implements UserIdNumbe
 		var userFilter = UserEntity.create().setIdNumber(data.getIdNumber())
 				.setUserType(UserTypeEntityMapper.INSTANCE.toEntity(data.getUserType()));
 
-		var resultados = userRepository.findByFilter(userFilter);
+		var results = userRepository.findByFilter(userFilter);
 
-		if (!resultados.isEmpty()) {
+		if (!results.isEmpty()) {
 			throw UserIdNumberForUserTypeDoesExistsException.create();
 		}
 
