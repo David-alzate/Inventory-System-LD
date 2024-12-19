@@ -38,7 +38,7 @@ public class CustomerRepositoryCustomImpl implements CustomerRepositoryCustom {
                 if (!TextHelper.isEmpty(filter.getName())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("name")), filter.getName().toUpperCase()));
                 }
-                if (!TextHelper.isEmpty(filter.getName())) {
+                if (!TextHelper.isEmpty(filter.getLastName())) {
                     predicates.add(criteriaBuilder.equal(criteriaBuilder.upper(result.get("lastName")), filter.getLastName().toUpperCase()));
                 }
                 if (!UUIDHelper.isDefault(filter.getIdType().getId())) {

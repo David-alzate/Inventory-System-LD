@@ -2,7 +2,9 @@ package co.inventory.system.ld.domain.customers.rules.impl;
 
 import co.inventory.system.ld.domain.customers.exceptions.CustomerNameLenghtIsNotValidException;
 import co.inventory.system.ld.domain.customers.rules.CustomerNameLenghtIsValidRule;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CustomerNameLenghtIsValidRuleImpl implements CustomerNameLenghtIsValidRule {
 
     private static final int MIN_NAME_LENGTH = 3;

@@ -12,9 +12,11 @@ import java.util.List;
 public class GetCustomerImpl implements GetCustomer {
 
     private CustomerRepository customerRepository;
+
     public GetCustomerImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
+
     @Override
     public List<CustomerDomain> execute(CustomerDomain domain) {
         var customerEntity= CustomerEntityMapper.INSTANCE.toEntity(domain);
