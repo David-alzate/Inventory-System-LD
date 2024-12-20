@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.commons.exceptions.idtype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class IdTypeIdDoesNotExistsException extends RuleInventorySystemException {
 	
@@ -11,7 +13,7 @@ public class IdTypeIdDoesNotExistsException extends RuleInventorySystemException
     }
 
     public static final IdTypeIdDoesNotExistsException create() {
-        var userMessage = "El id del tipo de identificacion no existe.";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00024);
         return new IdTypeIdDoesNotExistsException(userMessage);
     }
 }

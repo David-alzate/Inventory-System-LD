@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.commons.exceptions.idtype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class IdTypeIdIsNullException extends RuleInventorySystemException {
 	
@@ -11,7 +13,7 @@ public class IdTypeIdIsNullException extends RuleInventorySystemException {
     }
 
     public static final IdTypeIdIsNullException create(){
-        var userMessage = "El id del tipo de identificacion no puede ser nulo";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00026);
         return new IdTypeIdIsNullException(userMessage);
     }
 }

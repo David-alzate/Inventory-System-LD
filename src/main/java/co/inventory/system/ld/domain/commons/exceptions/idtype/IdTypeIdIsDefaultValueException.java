@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.commons.exceptions.idtype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class IdTypeIdIsDefaultValueException extends RuleInventorySystemException {
 	
@@ -11,7 +13,7 @@ public class IdTypeIdIsDefaultValueException extends RuleInventorySystemExceptio
     }
 
     public static final IdTypeIdIsDefaultValueException create(){
-        var userMessage = "El id del tipo de identificacion no puede ser el valor por defecto";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00025);
         return new IdTypeIdIsDefaultValueException(userMessage);
     }
 }

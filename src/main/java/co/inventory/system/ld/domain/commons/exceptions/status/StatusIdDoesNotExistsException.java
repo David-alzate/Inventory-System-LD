@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.commons.exceptions.status;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class StatusIdDoesNotExistsException extends RuleInventorySystemException {
 	
@@ -11,7 +13,7 @@ public class StatusIdDoesNotExistsException extends RuleInventorySystemException
     }
 
     public static final StatusIdDoesNotExistsException create() {
-        var userMessage = "El id del status no existe.";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00027);
         return new StatusIdDoesNotExistsException(userMessage);
     }
 }

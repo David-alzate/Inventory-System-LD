@@ -70,6 +70,22 @@ public class MessageCatalogBase implements MessageCatalog {
 		messages.put(MessageCode.M00023.getIdentifer(), new Message(MessageCode.M00023, 
 				"Usuarios Consultados exitosamente"));
 		
+		// Commons - Exceptions
+		
+		messages.put(MessageCode.M00024.getIdentifer(), new Message(MessageCode.M00024, 
+				"El id del tipo de identificacion no existe."));
+		messages.put(MessageCode.M00025.getIdentifer(), new Message(MessageCode.M00025, 
+				"El id del tipo de identificacion no puede ser el valor por defecto"));
+		messages.put(MessageCode.M00026.getIdentifer(), new Message(MessageCode.M00026, 
+				"El id del tipo de identificacion no puede ser nulo"));
+		
+		messages.put(MessageCode.M00027.getIdentifer(), new Message(MessageCode.M00027, 
+				"El id del status no existe."));
+		messages.put(MessageCode.M00028.getIdentifer(), new Message(MessageCode.M00028, 
+				"El id del status no puede ser el valor por defecto"));
+		messages.put(MessageCode.M00029.getIdentifer(), new Message(MessageCode.M00029, 
+				"El id del status no puede ser nulo"));
+		
 		
 	}
 
