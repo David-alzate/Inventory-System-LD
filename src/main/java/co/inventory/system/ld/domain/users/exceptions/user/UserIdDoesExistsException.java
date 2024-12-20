@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.user;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserIdDoesExistsException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class UserIdDoesExistsException extends RuleInventorySystemException {
     }
 
     public static UserIdDoesExistsException create() {
-        var userMessage = "El id del usuario ya existe";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00007);
         return new UserIdDoesExistsException(userMessage);
     }
 }

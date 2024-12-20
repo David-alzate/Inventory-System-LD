@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.user;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserIdNumberForUserTypeDoesExistsException extends RuleInventorySystemException{
 	
@@ -11,7 +13,7 @@ public class UserIdNumberForUserTypeDoesExistsException extends RuleInventorySys
     }
 
     public static UserIdNumberForUserTypeDoesExistsException create() {
-        var userMessage = "Ya Existe un usuario con este numero de documento para este tipo de usuario";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00009);
         return new UserIdNumberForUserTypeDoesExistsException(userMessage);
     }
 

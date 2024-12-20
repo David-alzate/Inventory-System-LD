@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.user;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserNameFormatIsNotValidException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class UserNameFormatIsNotValidException extends RuleInventorySystemExcept
     }
 
     public static UserNameFormatIsNotValidException create() {
-        var userMessage = "El formato del nombre del usuario no es valido";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00015);
         return new UserNameFormatIsNotValidException(userMessage);
     }
 }

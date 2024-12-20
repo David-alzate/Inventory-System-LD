@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.user;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserLastNameLenghIsNotValidException extends RuleInventorySystemException{
 	
@@ -11,7 +13,7 @@ public class UserLastNameLenghIsNotValidException extends RuleInventorySystemExc
     }
 
     public static UserLastNameLenghIsNotValidException create() {
-        var userMessage = "El tamaño del apellido no es valido";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00014);
         return new UserLastNameLenghIsNotValidException(userMessage);
     }
 

@@ -6,6 +6,8 @@ import co.inventory.system.ld.application.primaryports.mapper.users.RegisterNewU
 import co.inventory.system.ld.application.usecase.users.RegisterNewUser;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +30,8 @@ public class RegisterNewUserInteractorImpl implements RegisterNewUserInteractor 
         } catch (InventorySystemException exception) {
             throw exception;
         } catch (Exception exception) {
-            var userMessage = "Se ha presentado un problema registrando el usuario";
-            var technicalMessage = "Se ha presentado un problema INESPERADO registrando el usuario";
+            var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00019);
+            var technicalMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00020);
 
             throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
 

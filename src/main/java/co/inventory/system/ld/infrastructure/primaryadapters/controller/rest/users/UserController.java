@@ -13,6 +13,8 @@ import co.inventory.system.ld.application.primaryports.dto.users.UserDTO;
 import co.inventory.system.ld.application.primaryports.interactor.users.GetUserInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.users.RegisterNewUserInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.users.RegisterNewUserResponse;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.users.UserResponse;
 
@@ -36,7 +38,7 @@ public class UserController {
 
 		try {
 			registerNewUserInteractor.execute(user);
-			userResponse.getMensajes().add("Usuario creado exitosamente");
+			userResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00022));
 
 		} catch (final InventorySystemException excepcion) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
@@ -44,7 +46,7 @@ public class UserController {
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "se ha presentado un prblema tratando de registar el nuevo Usuario";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00019);
 			userResponse.getMensajes().add(mensajeUsuario);
 
 		}
@@ -62,7 +64,7 @@ public class UserController {
 		try {
 			var userDTO = UserDTO.create();
 			userResponse.setDatos(getUserInteractor.execute(userDTO));
-			userResponse.getMensajes().add("Usuarios Consultados exitosamente");
+			userResponse.getMensajes().add( MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00023));
 
 		} catch (final InventorySystemException excepcion) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
@@ -70,7 +72,7 @@ public class UserController {
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Se ha presentado un problema tratando de consultar los Usuarios";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00021);
 			userResponse.getMensajes().add(mensajeUsuario);
 		}
 

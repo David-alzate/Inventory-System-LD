@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.user;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserLastNameFormatIsNotValidException extends RuleInventorySystemException{
 	
@@ -11,7 +13,7 @@ public class UserLastNameFormatIsNotValidException extends RuleInventorySystemEx
     }
 
     public static UserLastNameFormatIsNotValidException create() {
-        var userMessage = "El formato del apellido del usuario no es valido";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00011);
         return new UserLastNameFormatIsNotValidException(userMessage);
     }
 

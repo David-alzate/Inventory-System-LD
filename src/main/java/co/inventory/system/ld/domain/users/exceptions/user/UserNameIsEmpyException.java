@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.user;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserNameIsEmpyException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class UserNameIsEmpyException extends RuleInventorySystemException {
     }
 
     public static UserNameIsEmpyException create() {
-        var userMessage = "El nombre del usuario no puede ser vacio";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00016);
         return new UserNameIsEmpyException(userMessage);
     }
 }
