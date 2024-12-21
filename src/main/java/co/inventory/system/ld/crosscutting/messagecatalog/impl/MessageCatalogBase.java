@@ -85,8 +85,24 @@ public class MessageCatalogBase implements MessageCatalog {
 				"El id del status no puede ser el valor por defecto"));
 		messages.put(MessageCode.M00029.getIdentifer(), new Message(MessageCode.M00029, 
 				"El id del status no puede ser nulo"));
-		
-		
+
+		//Suppliers - Exceptions
+
+		messages.put(MessageCode.M00030.getIdentifer(), new Message(MessageCode.M00030,
+				"El id del proveedor ya existe."));
+		messages.put(MessageCode.M00031.getIdentifer(), new Message(MessageCode.M00031,
+				"El id del proveedor no existe"));
+		messages.put(MessageCode.M00032.getIdentifer(), new Message(MessageCode.M00032,
+				"El id del proveedor es nulo"));
+		messages.put(MessageCode.M00033.getIdentifer(), new Message(MessageCode.M00033,
+				"El formato del nombre del proveedor no es valido"));
+		messages.put(MessageCode.M00034.getIdentifer(), new Message(MessageCode.M00034,
+				"El nombre del proveedor no puede ser vacio"));
+		messages.put(MessageCode.M00035.getIdentifer(), new Message(MessageCode.M00035,
+				"El nombre del proveedor no puede ser nulo"));
+		messages.put(MessageCode.M00036.getIdentifer(), new Message(MessageCode.M00036,
+				"La longitud del nombre del proveedor no es valida"));
+
 	}
 
 	@Override

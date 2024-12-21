@@ -44,8 +44,18 @@ public enum MessageCode {
 
 	M00027(MessageType.USER, CategoryMessage.ERROR, "00027", true),
 	M00028(MessageType.USER, CategoryMessage.ERROR, "00028", true),
-	M00029(MessageType.USER, CategoryMessage.ERROR, "00029", true);
+	M00029(MessageType.USER, CategoryMessage.ERROR, "00029", true),
 
+	//Suppliers - Exceptions
+
+	M00030(MessageType.USER, CategoryMessage.ERROR, "00030", true),
+	M00031(MessageType.USER, CategoryMessage.ERROR, "00031", true),
+	M00032(MessageType.USER, CategoryMessage.ERROR, "00032", true),
+	M00033(MessageType.USER, CategoryMessage.ERROR, "00033", true),
+	M00034(MessageType.USER, CategoryMessage.ERROR, "00034", true),
+	M00035(MessageType.USER, CategoryMessage.ERROR, "00035", true),
+	M00036(MessageType.USER, CategoryMessage.ERROR, "00036", true);
+	
 	private MessageType type;
 	private CategoryMessage category;
 	private String code;

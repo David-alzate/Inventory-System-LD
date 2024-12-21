@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.suppliers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class SupplierIdDoesExistException extends RuleInventorySystemException {
     private static final long serialVersionUID = 1L;
@@ -10,7 +12,7 @@ public class SupplierIdDoesExistException extends RuleInventorySystemException {
     }
 
     public static final SupplierIdDoesExistException create() {
-        var userMessage = "El id del proveedor ya existe.";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00030);
         return new SupplierIdDoesExistException(userMessage);
     }
 

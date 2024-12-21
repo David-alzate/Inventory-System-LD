@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.suppliers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class SupplierNameFormatIsNotValidException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class SupplierNameFormatIsNotValidException extends RuleInventorySystemEx
     }
 
     public static final SupplierNameFormatIsNotValidException create() {
-        var userMessage = "Supplier name format is not valid";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00033);
         return new SupplierNameFormatIsNotValidException(userMessage);
     }
 }
