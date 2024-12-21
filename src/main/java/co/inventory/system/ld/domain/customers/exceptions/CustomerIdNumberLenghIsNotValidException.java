@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.customers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class CustomerIdNumberLenghIsNotValidException extends RuleInventorySystemException{
 
@@ -11,7 +13,7 @@ public class CustomerIdNumberLenghIsNotValidException extends RuleInventorySyste
     }
 
     public static CustomerIdNumberLenghIsNotValidException create() {
-        var userMessage = "El tamaño para el número de identificación del cliente no es valido";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00047);
         return new CustomerIdNumberLenghIsNotValidException(userMessage);
     }
 

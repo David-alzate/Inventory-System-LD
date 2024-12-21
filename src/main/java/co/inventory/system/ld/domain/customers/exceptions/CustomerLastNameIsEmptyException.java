@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.customers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class CustomerLastNameIsEmptyException extends RuleInventorySystemException{
 
@@ -11,7 +13,7 @@ public class CustomerLastNameIsEmptyException extends RuleInventorySystemExcepti
 	    }
 
 	    public static CustomerLastNameIsEmptyException create() {
-	        var userMessage = "El apellido del cliente no puede ser vacio";
+	        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00049);
 	        return new CustomerLastNameIsEmptyException(userMessage);
 	    }
 

@@ -86,7 +86,7 @@ public class MessageCatalogBase implements MessageCatalog {
 		messages.put(MessageCode.M00029.getIdentifer(), new Message(MessageCode.M00029, 
 				"El id del status no puede ser nulo"));
 
-		//Suppliers - Exceptions
+		// Suppliers - Exceptions
 
 		messages.put(MessageCode.M00030.getIdentifer(), new Message(MessageCode.M00030,
 				"El id del proveedor ya existe."));
@@ -102,6 +102,68 @@ public class MessageCatalogBase implements MessageCatalog {
 				"El nombre del proveedor no puede ser nulo"));
 		messages.put(MessageCode.M00036.getIdentifer(), new Message(MessageCode.M00036,
 				"La longitud del nombre del proveedor no es valida"));
+		
+		//Suppliers - Interactor and controller
+		
+		
+		messages.put(MessageCode.M00037.getIdentifer(), new Message(MessageCode.M00037,
+				"Se ha presentado un error intentando registrar el proveedor"));
+		messages.put(MessageCode.M00038.getIdentifer(), new Message(MessageCode.M00038,
+				"Se ha presentado un error inesperado intentando registrar el proveedor"));
+		messages.put(MessageCode.M00039.getIdentifer(), new Message(MessageCode.M00039,
+				"Se ha presentado un problema tratando de consultar los proveedores"));
+		
+		messages.put(MessageCode.M00040.getIdentifer(), new Message(MessageCode.M00040,
+				"Proveedor creado exitosamente"));
+		messages.put(MessageCode.M00041.getIdentifer(), new Message(MessageCode.M00041,
+				"Proveedores Consultados exitosamente"));
+		
+		// Customers - Exceptions
+		
+		messages.put(MessageCode.M00042.getIdentifer(), new Message(MessageCode.M00042,
+				"El email del cliente ya se encuentra registrado"));
+		messages.put(MessageCode.M00043.getIdentifer(), new Message(MessageCode.M00043,
+				"El formato del email del cliente no es valido"));
+		messages.put(MessageCode.M00044.getIdentifer(), new Message(MessageCode.M00044,
+				"El id del cliente ya existe"));
+		messages.put(MessageCode.M00045.getIdentifer(), new Message(MessageCode.M00045,
+				"El id no puede ser nulo"));
+		messages.put(MessageCode.M00046.getIdentifer(), new Message(MessageCode.M00046,
+				"El id del cliente ya existe."));
+		messages.put(MessageCode.M00047.getIdentifer(), new Message(MessageCode.M00047,
+				"El tamaño para el número de identificación del cliente no es valido"));
+		messages.put(MessageCode.M00048.getIdentifer(), new Message(MessageCode.M00048,
+				"El formato del apellido del cliente no es valido"));
+		messages.put(MessageCode.M00049.getIdentifer(), new Message(MessageCode.M00049,
+				"El apellido del cliente no puede ser vacio"));
+		messages.put(MessageCode.M00050.getIdentifer(), new Message(MessageCode.M00050,
+				"El apellido del cliente no puede ser nulo"));
+		messages.put(MessageCode.M00051.getIdentifer(), new Message(MessageCode.M00051,
+				"El tamaño del apellido no es valido"));
+		messages.put(MessageCode.M00052.getIdentifer(), new Message(MessageCode.M00052,
+				"El formato del nombre del cliente no es valido"));
+		messages.put(MessageCode.M00053.getIdentifer(), new Message(MessageCode.M00053,
+				"El nombre del cliente no puede ser vacio"));
+		messages.put(MessageCode.M00054.getIdentifer(), new Message(MessageCode.M00054,
+				"El nombre del cliente no puede ser nulo"));
+		messages.put(MessageCode.M00055.getIdentifer(), new Message(MessageCode.M00055,
+				"El tamaño del nombre no es valido"));
+		
+		// Customers - Interactor and controller
+		
+		messages.put(MessageCode.M00056.getIdentifer(), new Message(MessageCode.M00056,
+				"Se ha presentado un problema registrando el cliente"));
+		messages.put(MessageCode.M00057.getIdentifer(), new Message(MessageCode.M00057,
+				"Se ha presentado un problema INESPERADO registrando el cliente"));
+		messages.put(MessageCode.M00058.getIdentifer(), new Message(MessageCode.M00058,
+				"Se ha presentado un problema tratando de consultar los clientes"));
+		
+		messages.put(MessageCode.M00059.getIdentifer(), new Message(MessageCode.M00059,
+				"Cliente creado exitosamente"));
+		messages.put(MessageCode.M00060.getIdentifer(), new Message(MessageCode.M00060,
+				"Clientes Consultados exitosamente"));
+		
+		
 
 	}
 

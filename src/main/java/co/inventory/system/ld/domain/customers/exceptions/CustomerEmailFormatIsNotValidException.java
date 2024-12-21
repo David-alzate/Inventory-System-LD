@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.customers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class CustomerEmailFormatIsNotValidException extends RuleInventorySystemException{
 
@@ -11,7 +13,7 @@ public class CustomerEmailFormatIsNotValidException extends RuleInventorySystemE
     }
 
     public static CustomerEmailFormatIsNotValidException create() {
-        var userMessage = "El formato del email del cliente no es valido";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00043);
         return new CustomerEmailFormatIsNotValidException(userMessage);
     }
 

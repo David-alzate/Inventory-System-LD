@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.customers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class CustomerNameIsNullException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class CustomerNameIsNullException extends RuleInventorySystemException {
     }
 
     public static CustomerNameIsNullException create() {
-        var userMessage = "El nombre del cliente no puede ser nulo";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00054);
         return new CustomerNameIsNullException(userMessage);
     }
 }

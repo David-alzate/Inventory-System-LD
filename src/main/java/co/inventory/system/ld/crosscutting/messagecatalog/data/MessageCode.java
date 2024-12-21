@@ -46,7 +46,7 @@ public enum MessageCode {
 	M00028(MessageType.USER, CategoryMessage.ERROR, "00028", true),
 	M00029(MessageType.USER, CategoryMessage.ERROR, "00029", true),
 
-	//Suppliers - Exceptions
+	// Suppliers - Exceptions
 
 	M00030(MessageType.USER, CategoryMessage.ERROR, "00030", true),
 	M00031(MessageType.USER, CategoryMessage.ERROR, "00031", true),
@@ -54,7 +54,47 @@ public enum MessageCode {
 	M00033(MessageType.USER, CategoryMessage.ERROR, "00033", true),
 	M00034(MessageType.USER, CategoryMessage.ERROR, "00034", true),
 	M00035(MessageType.USER, CategoryMessage.ERROR, "00035", true),
-	M00036(MessageType.USER, CategoryMessage.ERROR, "00036", true);
+	M00036(MessageType.USER, CategoryMessage.ERROR, "00036", true),
+	
+	// Suppliers - Interactor and controller
+	
+	M00037(MessageType.USER, CategoryMessage.ERROR, "00037", true),
+	M00038(MessageType.USER, CategoryMessage.ERROR, "00038", true),
+	M00039(MessageType.USER, CategoryMessage.ERROR, "00039", true),
+	
+	M00040(MessageType.USER, CategoryMessage.SUCCESS, "00040", true),
+	M00041(MessageType.USER, CategoryMessage.SUCCESS, "00041", true),
+	
+	// Customers - Exceptions
+	
+	M00042(MessageType.USER, CategoryMessage.ERROR, "00042", true),
+	M00043(MessageType.USER, CategoryMessage.ERROR, "00043", true),
+	M00044(MessageType.USER, CategoryMessage.ERROR, "00044", true),
+	M00045(MessageType.USER, CategoryMessage.ERROR, "00045", true),
+	M00046(MessageType.USER, CategoryMessage.ERROR, "00046", true),
+	M00047(MessageType.USER, CategoryMessage.ERROR, "00047", true),
+	M00048(MessageType.USER, CategoryMessage.ERROR, "00048", true),
+	M00049(MessageType.USER, CategoryMessage.ERROR, "00049", true),
+	M00050(MessageType.USER, CategoryMessage.ERROR, "00050", true),
+	M00051(MessageType.USER, CategoryMessage.ERROR, "00051", true),
+	M00052(MessageType.USER, CategoryMessage.ERROR, "00052", true),
+	M00053(MessageType.USER, CategoryMessage.ERROR, "00053", true),
+	M00054(MessageType.USER, CategoryMessage.ERROR, "00054", true),
+	M00055(MessageType.USER, CategoryMessage.ERROR, "00055", true),
+	
+	// Customers - Interactor and controller
+	
+	M00056(MessageType.USER, CategoryMessage.ERROR, "00056", true),
+	M00057(MessageType.USER, CategoryMessage.ERROR, "00057", true),
+	M00058(MessageType.USER, CategoryMessage.ERROR, "00058", true),
+	
+	M00059(MessageType.USER, CategoryMessage.SUCCESS, "00059", true),
+	M00060(MessageType.USER, CategoryMessage.SUCCESS, "00060", true);
+	
+	
+	
+	
+	
 	
 	private MessageType type;
 	private CategoryMessage category;

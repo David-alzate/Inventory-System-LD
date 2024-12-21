@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.customers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class CustomerIdIsNullException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class CustomerIdIsNullException extends RuleInventorySystemException {
     }
 
     public static CustomerIdIsNullException create() {
-        var userMessage = "El id no puede ser nulo";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00045);
         return new CustomerIdIsNullException(userMessage);
     }
 }

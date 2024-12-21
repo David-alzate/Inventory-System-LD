@@ -6,6 +6,9 @@ import co.inventory.system.ld.application.primaryports.mapper.customers.Register
 import co.inventory.system.ld.application.usecase.customers.RegisterNewCustomer;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,25 +16,25 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class RegisterNewCustomerInteractorImpl implements RegisterNewCustomerInteractor {
 
-    private final RegisterNewCustomer registerNewCustomer;
+	private final RegisterNewCustomer registerNewCustomer;
 
-    public RegisterNewCustomerInteractorImpl(RegisterNewCustomer registerNewCustomer) {
-        this.registerNewCustomer = registerNewCustomer;
-    }
+	public RegisterNewCustomerInteractorImpl(RegisterNewCustomer registerNewCustomer) {
+		this.registerNewCustomer = registerNewCustomer;
+	}
 
-    @Override
-    public void execute(RegisterNewCustomerDTO data) {
+	@Override
+	public void execute(RegisterNewCustomerDTO data) {
 
-        try { var registerCustomerDomain= RegisterNewCustomerDTOMapper.INSTANCE.toDomain(data);
-            registerNewCustomer.execute(registerCustomerDomain);
-        }catch (InventorySystemException exception){
-            throw exception;
-        }catch (Exception exception){
-            var userMessage= "Se ha presentado un problema registrando el cliente";
-            var technicalMessage="Se ha presentado un problema INESPERADO registrando el cliente";
+		try {
+			var registerCustomerDomain = RegisterNewCustomerDTOMapper.INSTANCE.toDomain(data);
+			registerNewCustomer.execute(registerCustomerDomain);
+		} catch (InventorySystemException exception) {
+			throw exception;
+		} catch (Exception exception) {
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00056);
+			var technicalMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00057);
 
-            throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
-        }
-    }
+			throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
+		}
+	}
 }
-

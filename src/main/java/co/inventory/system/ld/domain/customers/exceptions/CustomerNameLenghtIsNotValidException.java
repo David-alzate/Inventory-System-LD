@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.customers.exceptions;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class CustomerNameLenghtIsNotValidException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class CustomerNameLenghtIsNotValidException extends RuleInventorySystemEx
     }
 
     public static CustomerNameLenghtIsNotValidException create() {
-        var userMessage = "El tamaño del nombre no es valido";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00055);
         return new CustomerNameLenghtIsNotValidException(userMessage);
     }
 }
