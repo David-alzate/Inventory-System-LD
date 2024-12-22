@@ -1,10 +1,13 @@
 package co.inventory.system.ld.application.usecase.products.impl.rulesvalidatorimpl;
 
+import org.springframework.stereotype.Service;
+
 import co.inventory.system.ld.application.usecase.products.rulesvalidator.RegisterNewProductIdRulesValidator;
 import co.inventory.system.ld.domain.products.ProductDomain;
 import co.inventory.system.ld.domain.products.exceptions.ProductIdDoesExitsException;
 import co.inventory.system.ld.domain.products.rules.ProductIdDoesNotExitsRule;
 
+@Service
 public class RegisterNewProductIdRulesValidatorImpl implements RegisterNewProductIdRulesValidator {
 
 	private ProductIdDoesNotExitsRule productIdDoesNotExitsRule;

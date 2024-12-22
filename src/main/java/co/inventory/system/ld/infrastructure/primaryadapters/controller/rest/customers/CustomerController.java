@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/customers/api/v1/customer")
 public class CustomerController {
+	
 	private final RegisterNewCustomerInteractor registerNewCustomerInteractor;
 	private final GetCustomerInteractor getCustomerInteractor;
 
