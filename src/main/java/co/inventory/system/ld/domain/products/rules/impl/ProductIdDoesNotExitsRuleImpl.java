@@ -19,7 +19,7 @@ public class ProductIdDoesNotExitsRuleImpl implements ProductIdDoesNotExitsRule{
 
 	@Override
 	public void validate(UUID data) {
-		if(!productsRepository.existsById(data)) {
+		if(productsRepository.existsById(data)) {
 			throw ProductIdDoesExitsException.create();
 		}
 		

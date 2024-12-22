@@ -2,11 +2,16 @@ package co.inventory.system.ld.application.primaryports.interactor.products.impl
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import co.inventory.system.ld.application.primaryports.dto.products.ProductTypeDTO;
 import co.inventory.system.ld.application.primaryports.interactor.products.GetProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.products.ProductTypeDTOMapper;
 import co.inventory.system.ld.application.usecase.products.GetProductType;
+import jakarta.transaction.Transactional;
 
+@Service
+@Transactional
 public class GetProductTypeInteractorImpl implements GetProductTypeInteractor {
 	
 	private final GetProductType getProductType;
