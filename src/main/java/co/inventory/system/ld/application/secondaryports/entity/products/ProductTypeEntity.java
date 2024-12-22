@@ -1,4 +1,6 @@
-package co.inventory.system.ld.application.secondaryports.entity.commons;
+package co.inventory.system.ld.application.secondaryports.entity.products;
+
+import java.util.UUID;
 
 import co.inventory.system.ld.crosscutting.helpers.TextHelper;
 import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
@@ -7,12 +9,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.util.UUID;
-
 @Entity
-@Table(name = "idType")
-public class IdTypeEntity {
-	
+@Table(name = "productType")
+public class ProductTypeEntity {
+
 	@Id
 	@Column(name = "id")
 	private UUID id;
@@ -20,43 +20,42 @@ public class IdTypeEntity {
 	@Column(name = "name")
 	private String name;
 
-	public IdTypeEntity() {
+	public ProductTypeEntity() {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 	}
 
-	public IdTypeEntity(final UUID id, final String name) {
+	public ProductTypeEntity(UUID id, String name) {
 		setId(id);
 		setName(name);
 	}
 
-	public static final IdTypeEntity create() {
-		return new IdTypeEntity();
+	public static final ProductTypeEntity create(UUID id, String name) {
+		return new ProductTypeEntity(id, name);
 	}
 
-	public static final IdTypeEntity create(final UUID id) {
-		return new IdTypeEntity(id, TextHelper.EMPTY);
+	public static final ProductTypeEntity create(UUID id) {
+		return new ProductTypeEntity(id, TextHelper.EMPTY);
 	}
 
-	public static final IdTypeEntity create(final UUID id, final String name) {
-		return new IdTypeEntity(id, name);
+	public static final ProductTypeEntity create() {
+		return new ProductTypeEntity(UUIDHelper.getDefault(), TextHelper.EMPTY);
 	}
 
 	public UUID getId() {
 		return id;
 	}
 
-	public IdTypeEntity setId(final UUID id) {
+	public void setId(UUID id) {
 		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
-		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public IdTypeEntity setName(final String name) {
+	public void setName(String name) {
 		this.name = TextHelper.applyTrim(name);
-		return this;
 	}
+
 }

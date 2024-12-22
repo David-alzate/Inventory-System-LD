@@ -9,6 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface CustomerEntityMapper {
+	
     CustomerEntityMapper INSTANCE = Mappers.getMapper(CustomerEntityMapper.class);
 
     CustomerEntity toEntity(CustomerDomain customerDomain);

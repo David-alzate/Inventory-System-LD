@@ -5,6 +5,7 @@ import co.inventory.system.ld.crosscutting.helpers.UUIDHelper;
 import java.util.UUID;
 
 public class IdTypeDTO {
+	
     private UUID id;
     private String name;
 
