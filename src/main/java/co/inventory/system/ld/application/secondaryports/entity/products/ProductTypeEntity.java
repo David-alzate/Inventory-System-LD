@@ -46,16 +46,18 @@ public class ProductTypeEntity {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public ProductTypeEntity setId(UUID id) {
 		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
+		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public ProductTypeEntity setName(String name) {
 		this.name = TextHelper.applyTrim(name);
+		return this;
 	}
 
 }

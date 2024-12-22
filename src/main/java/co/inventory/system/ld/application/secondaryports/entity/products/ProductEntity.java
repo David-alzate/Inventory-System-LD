@@ -77,48 +77,54 @@ public class ProductEntity {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public ProductEntity setId(UUID id) {
 		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
+		return this;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public ProductEntity setName(String name) {
 		this.name = TextHelper.applyTrim(name);
+		return this;
 	}
 
 	public BigDecimal getPrice() {
 		return price;
 	}
 
-	public void setPrice(BigDecimal price) {
+	public ProductEntity setPrice(BigDecimal price) {
 		this.price = price;
+		return this;
 	}
 
 	public int getStock() {
 		return stock;
 	}
 
-	public void setStock(int stock) {
+	public ProductEntity setStock(int stock) {
 		this.stock = stock;
+		return this;
 	}
 
 	public ProductTypeEntity getProductType() {
 		return productType;
 	}
 
-	public void setProductType(ProductTypeEntity productType) {
+	public ProductEntity setProductType(ProductTypeEntity productType) {
 		this.productType = ObjectHelper.getDefault(productType, ProductTypeEntity.create());
+		return this;
 	}
 
 	public SupplierEntity getSupplier() {
 		return supplier;
 	}
 
-	public void setSupplier(SupplierEntity supplier) {
+	public ProductEntity setSupplier(SupplierEntity supplier) {
 		this.supplier = ObjectHelper.getDefault(supplier, SupplierEntity.create());
+		return this;
 	}
 
 }
