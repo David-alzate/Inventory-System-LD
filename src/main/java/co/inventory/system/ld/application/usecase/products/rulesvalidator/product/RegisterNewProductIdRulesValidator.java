@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.usecase.products.rulesvalidator;
+package co.inventory.system.ld.application.usecase.products.rulesvalidator.product;
 
 import co.inventory.system.ld.application.usecase.RulesValidator;
 import co.inventory.system.ld.domain.products.ProductDomain;

@@ -1,9 +1,9 @@
-package co.inventory.system.ld.application.usecase.products.impl.rulesvalidatorimpl;
+package co.inventory.system.ld.application.usecase.products.impl.rulesvalidatorimpl.product;
 
 import org.springframework.stereotype.Service;
 
-import co.inventory.system.ld.application.usecase.products.rulesvalidator.RegisterNewProductIdRulesValidator;
-import co.inventory.system.ld.application.usecase.products.rulesvalidator.RegisterNewProductRulesValidator;
+import co.inventory.system.ld.application.usecase.products.rulesvalidator.product.RegisterNewProductIdRulesValidator;
+import co.inventory.system.ld.application.usecase.products.rulesvalidator.product.RegisterNewProductRulesValidator;
 import co.inventory.system.ld.domain.products.ProductDomain;
 
 @Service

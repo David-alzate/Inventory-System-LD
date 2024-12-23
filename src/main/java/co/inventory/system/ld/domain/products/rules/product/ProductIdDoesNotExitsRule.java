@@ -1,4 +1,4 @@
-package co.inventory.system.ld.domain.products.rules;
+package co.inventory.system.ld.domain.products.rules.product;
 
 import java.util.UUID;
 
