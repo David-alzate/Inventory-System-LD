@@ -10,6 +10,7 @@ import co.inventory.system.ld.domain.customers.CustomerDomain;
 
 @Mapper
 public interface RegisterNewCustomerEntityMapper {
+	
 	RegisterNewCustomerEntityMapper INSTANCE = Mappers.getMapper(RegisterNewCustomerEntityMapper.class);
 
 	CustomerEntity toEntity(CustomerDomain domain);

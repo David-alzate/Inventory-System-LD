@@ -6,6 +6,7 @@ import co.inventory.system.ld.infrastructure.primaryadapters.controller.response
 import java.util.ArrayList;
 
 public class GetCustomersResponse extends Response <CustomerDTO> {
+	
     public GetCustomersResponse() {
         setMensajes(new ArrayList<String>());
         setDatos(new ArrayList<>());

@@ -8,6 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface CustomerDTOMapper {
+	
     CustomerDTOMapper INSTANCE= Mappers.getMapper(CustomerDTOMapper.class);
 
     CustomerDomain toDomain(CustomerDTO customerDTO);
