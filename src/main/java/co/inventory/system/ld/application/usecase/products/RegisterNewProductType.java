@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.usecase.products.producttype;
+package co.inventory.system.ld.application.usecase.products;
 
 import co.inventory.system.ld.application.usecase.UseCaseWithOutRetuen;
 import co.inventory.system.ld.domain.products.ProductTypeDomain;

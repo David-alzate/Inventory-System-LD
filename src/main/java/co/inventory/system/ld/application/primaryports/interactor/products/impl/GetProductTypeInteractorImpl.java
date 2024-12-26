@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import co.inventory.system.ld.application.primaryports.dto.products.ProductTypeDTO;
 import co.inventory.system.ld.application.primaryports.interactor.products.GetProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.products.ProductTypeDTOMapper;
-import co.inventory.system.ld.application.usecase.products.producttype.GetProductType;
+import co.inventory.system.ld.application.usecase.products.GetProductType;
 import jakarta.transaction.Transactional;
 
 @Service

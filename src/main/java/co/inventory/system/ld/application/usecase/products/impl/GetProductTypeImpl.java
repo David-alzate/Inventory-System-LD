@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.usecase.products.impl.producttype;
+package co.inventory.system.ld.application.usecase.products.impl;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.secondaryports.mapper.products.ProductTypeEntityMapper;
 import co.inventory.system.ld.application.secondaryports.repository.products.ProductTypeRepository;
-import co.inventory.system.ld.application.usecase.products.producttype.GetProductType;
+import co.inventory.system.ld.application.usecase.products.GetProductType;
 import co.inventory.system.ld.domain.products.ProductTypeDomain;
 
 @Service
