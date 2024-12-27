@@ -6,7 +6,7 @@ import co.inventory.system.ld.domain.products.exceptions.producttype.ProductType
 import co.inventory.system.ld.domain.products.rules.producttype.ProductTypeNameFormatIsValidRule;
 
 @Service
-public class ProductNameFormatIsValidRuleImpl implements ProductTypeNameFormatIsValidRule {
+public class ProductTypeNameFormatIsValidRuleImpl implements ProductTypeNameFormatIsValidRule {
 
     @Override
     public void validate(String data) {
