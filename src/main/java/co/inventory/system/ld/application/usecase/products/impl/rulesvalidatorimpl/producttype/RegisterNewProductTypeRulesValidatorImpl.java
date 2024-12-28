@@ -1,9 +1,9 @@
 package co.inventory.system.ld.application.usecase.products.impl.rulesvalidatorimpl.producttype;
 
-import co.inventory.system.ld.application.usecase.products.rulesvalidator.producttype.RegisterNewProductTypeNameRulesValidator;
 import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.usecase.products.rulesvalidator.producttype.RegisterNewProductTypeIdRulesValidator;
+import co.inventory.system.ld.application.usecase.products.rulesvalidator.producttype.RegisterNewProductTypeNameRulesValidator;
 import co.inventory.system.ld.application.usecase.products.rulesvalidator.producttype.RegisterNewProductTypeRulesValidator;
 import co.inventory.system.ld.domain.products.ProductTypeDomain;
 
@@ -13,7 +13,9 @@ public class RegisterNewProductTypeRulesValidatorImpl implements RegisterNewProd
 	private final RegisterNewProductTypeIdRulesValidator registerNewProductTypeIdRulesValidator;
 	private final RegisterNewProductTypeNameRulesValidator registerNewProductTypeNameRulesValidator;
 
-	public RegisterNewProductTypeRulesValidatorImpl(RegisterNewProductTypeIdRulesValidator registerNewProductTypeIdRulesValidator, RegisterNewProductTypeNameRulesValidator registerNewProductTypeNameRulesValidator) {
+	public RegisterNewProductTypeRulesValidatorImpl(
+			RegisterNewProductTypeIdRulesValidator registerNewProductTypeIdRulesValidator,
+			RegisterNewProductTypeNameRulesValidator registerNewProductTypeNameRulesValidator) {
 		this.registerNewProductTypeIdRulesValidator = registerNewProductTypeIdRulesValidator;
 		this.registerNewProductTypeNameRulesValidator = registerNewProductTypeNameRulesValidator;
 	}
