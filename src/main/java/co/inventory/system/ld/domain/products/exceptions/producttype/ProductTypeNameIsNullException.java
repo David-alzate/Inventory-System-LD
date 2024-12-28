@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.products.exceptions.producttype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class ProductTypeNameIsNullException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class ProductTypeNameIsNullException extends RuleInventorySystemException
 	}
 
 	public static ProductTypeNameIsNullException create() {
-		var userMessage = "El id del tipo de producto ya existe";
+		var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00064);
 		return new ProductTypeNameIsNullException(userMessage);
 	}
 

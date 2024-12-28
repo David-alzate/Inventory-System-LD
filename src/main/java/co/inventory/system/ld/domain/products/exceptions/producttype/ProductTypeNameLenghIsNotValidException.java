@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.products.exceptions.producttype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class ProductTypeNameLenghIsNotValidException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class ProductTypeNameLenghIsNotValidException extends RuleInventorySystem
 	}
 
 	public static ProductTypeNameLenghIsNotValidException create() {
-		var userMessage = "El tamaño del nombre del tipo de producto no es válido";
+		var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00065);
 		return new ProductTypeNameLenghIsNotValidException(userMessage);
 	}
 

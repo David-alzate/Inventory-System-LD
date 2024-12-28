@@ -89,7 +89,15 @@ public enum MessageCode {
 	M00058(MessageType.USER, CategoryMessage.ERROR, "00058", true),
 	
 	M00059(MessageType.USER, CategoryMessage.SUCCESS, "00059", true),
-	M00060(MessageType.USER, CategoryMessage.SUCCESS, "00060", true);
+	M00060(MessageType.USER, CategoryMessage.SUCCESS, "00060", true),
+
+	// Product Type - Exceptions
+
+	M00061(MessageType.USER, CategoryMessage.ERROR, "00061", true),
+	M00062(MessageType.USER, CategoryMessage.ERROR, "00062", true),
+	M00063(MessageType.USER, CategoryMessage.ERROR, "00063", true),
+	M00064(MessageType.USER, CategoryMessage.ERROR, "00064", true),
+	M00065(MessageType.USER, CategoryMessage.ERROR, "00065", true);
 	
 	
 	

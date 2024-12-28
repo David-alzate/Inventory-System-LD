@@ -162,6 +162,21 @@ public class MessageCatalogBase implements MessageCatalog {
 				"Cliente creado exitosamente"));
 		messages.put(MessageCode.M00060.getIdentifer(), new Message(MessageCode.M00060,
 				"Clientes Consultados exitosamente"));
+
+		// Product Type - Exceptions
+
+		messages.put(MessageCode.M00061.getIdentifer(), new Message(MessageCode.M00061,
+				"El id del tipo del producto ya existe"));
+		messages.put(MessageCode.M00062.getIdentifer(), new Message(MessageCode.M00062,
+				"El formato del nombre del tipo de producto no es valido"));
+		messages.put(MessageCode.M00063.getIdentifer(), new Message(MessageCode.M00063,
+				"El nombre del tipo de producto no puede estar vacio"));
+		messages.put(MessageCode.M00064.getIdentifer(), new Message(MessageCode.M00064,
+				"El id del tipo de producto ya existe"));
+		messages.put(MessageCode.M00065.getIdentifer(), new Message(MessageCode.M00065,
+				"El tamaño del nombre del tipo de producto no es válido"));
+
+
 		
 		
 
