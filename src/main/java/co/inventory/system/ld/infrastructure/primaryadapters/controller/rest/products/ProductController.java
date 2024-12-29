@@ -13,6 +13,8 @@ import co.inventory.system.ld.application.primaryports.dto.products.RegisterNewP
 import co.inventory.system.ld.application.primaryports.interactor.products.GetProductInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.RegisterNewProductInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.GetProductResponse;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.RegisterNewProductResponse;
 
@@ -37,14 +39,14 @@ public class ProductController {
 
 		try {
 			registerNewProductInteractor.execute(product);
-			productResponse.getMensajes().add("Producto registrado correctamente");
+			productResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00083));
 
 		} catch (final InventorySystemException excepcion) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			productResponse.getMensajes().add(excepcion.getUserMessage());
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
-			var userMessage = "Error al registrar el producto";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00080);
 			productResponse.getMensajes().add(userMessage);
 		}
 
@@ -59,7 +61,7 @@ public class ProductController {
 		try {
 			var productDTO = ProductDTO.create();
 			productResponse.setDatos(getProductInteractor.execute(productDTO));
-			productResponse.getMensajes().add("Productos consultados correctamente");
+			productResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00084));
 
 		} catch (final InventorySystemException excepcion) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
@@ -67,7 +69,7 @@ public class ProductController {
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var userMessage = "Error al consultar los productos";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00082);
 			productResponse.getMensajes().add(userMessage);
 		}
 

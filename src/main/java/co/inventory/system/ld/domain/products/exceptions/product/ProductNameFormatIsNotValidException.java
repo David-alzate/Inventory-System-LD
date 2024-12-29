@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.products.exceptions.product;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class ProductNameFormatIsNotValidException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class ProductNameFormatIsNotValidException extends RuleInventorySystemExc
 	}
 
 	public static ProductNameFormatIsNotValidException create() {
-		var userMessage = "El formato del nombre del producto no es valido";
+		var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00076);
 		return new ProductNameFormatIsNotValidException(userMessage);
 	}
 

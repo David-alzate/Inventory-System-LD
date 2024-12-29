@@ -8,6 +8,8 @@ import co.inventory.system.ld.application.primaryports.mapper.products.RegisterN
 import co.inventory.system.ld.application.usecase.products.RegisterNewProduct;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -28,8 +30,8 @@ public class RegisterNewProductInteractorImpl implements RegisterNewProductInter
 		} catch (InventorySystemException exception) {
 			throw exception;
 		} catch (Exception exception) {
-			var userMessage = "Se ha presentado un problema registrando el producto";
-			var technicalMessage = "Se ha presentado un problema INESPERADO registrando el producto";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00080);
+			var technicalMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00081);
 
 			throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
 

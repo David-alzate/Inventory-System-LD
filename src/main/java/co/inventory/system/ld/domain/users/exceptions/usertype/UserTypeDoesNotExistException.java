@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.usertype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserTypeDoesNotExistException extends RuleInventorySystemException {
 	
@@ -11,7 +13,7 @@ public class UserTypeDoesNotExistException extends RuleInventorySystemException 
     }
 
     public static UserTypeDoesNotExistException create() {
-        var userMessage = "El tipo de usuario no existe.";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00085);
         return new UserTypeDoesNotExistException(userMessage);
     }
 

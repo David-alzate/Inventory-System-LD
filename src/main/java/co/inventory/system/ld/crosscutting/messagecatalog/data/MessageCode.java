@@ -55,18 +55,18 @@ public enum MessageCode {
 	M00034(MessageType.USER, CategoryMessage.ERROR, "00034", true),
 	M00035(MessageType.USER, CategoryMessage.ERROR, "00035", true),
 	M00036(MessageType.USER, CategoryMessage.ERROR, "00036", true),
-	
+
 	// Suppliers - Interactor and controller
-	
+
 	M00037(MessageType.USER, CategoryMessage.ERROR, "00037", true),
 	M00038(MessageType.USER, CategoryMessage.ERROR, "00038", true),
 	M00039(MessageType.USER, CategoryMessage.ERROR, "00039", true),
-	
+
 	M00040(MessageType.USER, CategoryMessage.SUCCESS, "00040", true),
 	M00041(MessageType.USER, CategoryMessage.SUCCESS, "00041", true),
-	
+
 	// Customers - Exceptions
-	
+
 	M00042(MessageType.USER, CategoryMessage.ERROR, "00042", true),
 	M00043(MessageType.USER, CategoryMessage.ERROR, "00043", true),
 	M00044(MessageType.USER, CategoryMessage.ERROR, "00044", true),
@@ -81,13 +81,13 @@ public enum MessageCode {
 	M00053(MessageType.USER, CategoryMessage.ERROR, "00053", true),
 	M00054(MessageType.USER, CategoryMessage.ERROR, "00054", true),
 	M00055(MessageType.USER, CategoryMessage.ERROR, "00055", true),
-	
+
 	// Customers - Interactor and controller
-	
+
 	M00056(MessageType.USER, CategoryMessage.ERROR, "00056", true),
 	M00057(MessageType.USER, CategoryMessage.ERROR, "00057", true),
 	M00058(MessageType.USER, CategoryMessage.ERROR, "00058", true),
-	
+
 	M00059(MessageType.USER, CategoryMessage.SUCCESS, "00059", true),
 	M00060(MessageType.USER, CategoryMessage.SUCCESS, "00060", true),
 
@@ -97,13 +97,46 @@ public enum MessageCode {
 	M00062(MessageType.USER, CategoryMessage.ERROR, "00062", true),
 	M00063(MessageType.USER, CategoryMessage.ERROR, "00063", true),
 	M00064(MessageType.USER, CategoryMessage.ERROR, "00064", true),
-	M00065(MessageType.USER, CategoryMessage.ERROR, "00065", true);
+	M00065(MessageType.USER, CategoryMessage.ERROR, "00065", true),
+	M00066(MessageType.USER, CategoryMessage.ERROR, "00066", true),
+	M00067(MessageType.USER, CategoryMessage.ERROR, "00067", true),
+	M00068(MessageType.USER, CategoryMessage.ERROR, "00068", true),
+
+	// Product Type - Interactor and controller
+
+	M00069(MessageType.USER, CategoryMessage.ERROR, "00069", true),
+	M00070(MessageType.USER, CategoryMessage.ERROR, "00070", true),
+	M00071(MessageType.USER, CategoryMessage.ERROR, "00071", true),
+
+	M00072(MessageType.USER, CategoryMessage.SUCCESS, "00072", true),
+	M00073(MessageType.USER, CategoryMessage.SUCCESS, "00073", true),
+
+	// Product - Exceptions
+
+	M00074(MessageType.USER, CategoryMessage.ERROR, "00074", true),
+	M00075(MessageType.USER, CategoryMessage.ERROR, "00075", true),
+	M00076(MessageType.USER, CategoryMessage.ERROR, "00076", true),
+	M00077(MessageType.USER, CategoryMessage.ERROR, "00077", true),
+	M00078(MessageType.USER, CategoryMessage.ERROR, "00078", true),
+	M00079(MessageType.USER, CategoryMessage.ERROR, "00079", true),
+
+	// Product - Interactor and controller
+
+	M00080(MessageType.USER, CategoryMessage.ERROR, "00080", true),
+	M00081(MessageType.USER, CategoryMessage.ERROR, "00081", true),
+	M00082(MessageType.USER, CategoryMessage.ERROR, "00082", true),
+
+	M00083(MessageType.USER, CategoryMessage.SUCCESS, "00083", true),
+	M00084(MessageType.USER, CategoryMessage.SUCCESS, "00084", true),
+	
+	// User Type - Exceptions
+	
+	M00085(MessageType.USER, CategoryMessage.ERROR, "00085", true),
+	M00086(MessageType.USER, CategoryMessage.ERROR, "00086", true),
+	M00087(MessageType.USER, CategoryMessage.ERROR, "00087", true);
 	
 	
-	
-	
-	
-	
+
 	private MessageType type;
 	private CategoryMessage category;
 	private String code;

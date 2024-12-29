@@ -172,10 +172,67 @@ public class MessageCatalogBase implements MessageCatalog {
 		messages.put(MessageCode.M00063.getIdentifer(), new Message(MessageCode.M00063,
 				"El nombre del tipo de producto no puede estar vacio"));
 		messages.put(MessageCode.M00064.getIdentifer(), new Message(MessageCode.M00064,
-				"El id del tipo de producto ya existe"));
+				"El nombre del tipo de producto no puede ser nulo"));
 		messages.put(MessageCode.M00065.getIdentifer(), new Message(MessageCode.M00065,
 				"El tamaño del nombre del tipo de producto no es válido"));
-
+		messages.put(MessageCode.M00066.getIdentifer(), new Message(MessageCode.M00066,
+				"El id del tipo del producto no puede ser el valor por defecto"));
+		messages.put(MessageCode.M00067.getIdentifer(), new Message(MessageCode.M00067,
+				"El id del tipo del producto no puede ser nulo"));
+		messages.put(MessageCode.M00068.getIdentifer(), new Message(MessageCode.M00068,
+				"El id del tipo de producto no existe"));
+		
+		// Product Type - Interactor and controller
+		
+		messages.put(MessageCode.M00069.getIdentifer(), new Message(MessageCode.M00069,
+				"Se ha presentado un problema registrando el tipo de producto"));
+		messages.put(MessageCode.M00070.getIdentifer(), new Message(MessageCode.M00070,
+				"Se ha presentado un problema INESPERADO registrando el tipo de producto"));
+		messages.put(MessageCode.M00071.getIdentifer(), new Message(MessageCode.M00071,
+				"Se ha presentado un problema consultando el tipo de producto"));
+		
+		messages.put(MessageCode.M00072.getIdentifer(), new Message(MessageCode.M00072,
+				"Tipo de Producto registrado correctamente"));
+		messages.put(MessageCode.M00073.getIdentifer(), new Message(MessageCode.M00073,
+				"Tipo de producto consultado correctamente"));
+		
+		// Product - Exceptions
+		
+		messages.put(MessageCode.M00074.getIdentifer(), new Message(MessageCode.M00074,
+				"El id del producto ya existe"));
+		messages.put(MessageCode.M00075.getIdentifer(), new Message(MessageCode.M00075,
+				"El id del producto es nulo"));
+		messages.put(MessageCode.M00076.getIdentifer(), new Message(MessageCode.M00076,
+				"El formato del nombre del producto no es valido"));
+		messages.put(MessageCode.M00077.getIdentifer(), new Message(MessageCode.M00077,
+				"El nombre del producto no puede estar vacio"));
+		messages.put(MessageCode.M00078.getIdentifer(), new Message(MessageCode.M00078,
+				"El id del producto ya existe"));
+		messages.put(MessageCode.M00079.getIdentifer(), new Message(MessageCode.M00079,
+				"El tamaño del nombre del producto no es válido"));
+		
+		// Product - Interactor and controller
+		
+		messages.put(MessageCode.M00080.getIdentifer(), new Message(MessageCode.M00080,
+				"Se ha presentado un problema registrando el producto"));
+		messages.put(MessageCode.M00081.getIdentifer(), new Message(MessageCode.M00081,
+				"Se ha presentado un problema INESPERADO registrando el producto"));
+		messages.put(MessageCode.M00082.getIdentifer(), new Message(MessageCode.M00082,
+				"Se ha presentado un problema consultando el producto"));
+		
+		messages.put(MessageCode.M00083.getIdentifer(), new Message(MessageCode.M00083,
+				"Producto registrado correctamente"));
+		messages.put(MessageCode.M00084.getIdentifer(), new Message(MessageCode.M00084,
+				"Productos consultados correctamente"));
+		
+		// User Type - Exceptions
+		
+		messages.put(MessageCode.M00085.getIdentifer(), new Message(MessageCode.M00085,
+				"El tipo de usuario no existe."));
+		messages.put(MessageCode.M00086.getIdentifer(), new Message(MessageCode.M00086,
+				"El id del tipo de usuario no puede ser el valor por defecto"));
+		messages.put(MessageCode.M00087.getIdentifer(), new Message(MessageCode.M00087,
+				"El id del tipo de usuario no puede ser nulo."));
 
 		
 		

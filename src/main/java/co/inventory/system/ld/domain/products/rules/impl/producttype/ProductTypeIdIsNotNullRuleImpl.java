@@ -7,6 +7,7 @@ import co.inventory.system.ld.domain.products.exceptions.producttype.ProductType
 import co.inventory.system.ld.domain.products.rules.producttype.ProductTypeIdIsNotNullRule;
 
 public class ProductTypeIdIsNotNullRuleImpl implements ProductTypeIdIsNotNullRule {
+	
     @Override
     public void validate(UUID data) {
         if (ObjectHelper.isNull(data)){

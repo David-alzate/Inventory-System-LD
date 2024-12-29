@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.users.exceptions.usertype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class UserTypeIdIsDefaultValueException extends RuleInventorySystemException{
 	
@@ -11,7 +13,7 @@ public class UserTypeIdIsDefaultValueException extends RuleInventorySystemExcept
     }
 
     public static UserTypeIdIsDefaultValueException create() {
-        var userMessage = "El id del tipo de usuario no puede ser el valor por defecto";
+        var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00086);
         return new UserTypeIdIsDefaultValueException(userMessage);
     }
 

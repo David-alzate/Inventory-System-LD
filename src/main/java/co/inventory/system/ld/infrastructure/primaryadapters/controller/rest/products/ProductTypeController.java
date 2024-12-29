@@ -13,6 +13,8 @@ import co.inventory.system.ld.application.primaryports.dto.products.RegisterNewP
 import co.inventory.system.ld.application.primaryports.interactor.products.GetProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.RegisterNewProductTypeInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.GetProductTypeResponse;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.RegisterNewProductTypeResponse;
 
@@ -37,14 +39,14 @@ public class ProductTypeController {
 
 		try {
 			registerNewProductTypeInteractor.execute(product);
-			productTypeResponse.getMensajes().add("Tipo de Producto registrado correctamente");
+			productTypeResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00072));
 
 		} catch (final InventorySystemException excepcion) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			productTypeResponse.getMensajes().add(excepcion.getUserMessage());
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
-			var userMessage = "Error al registrar el tipo de producto";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00069);
 			productTypeResponse.getMensajes().add(userMessage);
 		}
 
@@ -60,7 +62,7 @@ public class ProductTypeController {
 		try {
 			var productTypeDTO = ProductTypeDTO.create();
 			productTypeResponse.setDatos(getProductType.execute(productTypeDTO));
-			productTypeResponse.getMensajes().add("Tipo de producto consultado correctamente");
+			productTypeResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00073));
 
 		} catch (final InventorySystemException excepcion) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
@@ -68,7 +70,7 @@ public class ProductTypeController {
 		} catch (final Exception excepcion) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var userMessage = "Error al consultar el tipo de producto";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00071);
 			productTypeResponse.getMensajes().add(userMessage);
 		}
 

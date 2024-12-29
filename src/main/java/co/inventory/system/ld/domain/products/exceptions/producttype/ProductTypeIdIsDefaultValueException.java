@@ -1,6 +1,8 @@
 package co.inventory.system.ld.domain.products.exceptions.producttype;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 
 public class ProductTypeIdIsDefaultValueException extends RuleInventorySystemException {
 
@@ -11,7 +13,7 @@ public class ProductTypeIdIsDefaultValueException extends RuleInventorySystemExc
 	}
 
 	public static ProductTypeIdIsDefaultValueException create() {
-		var userMessage = "El id del tipo del producto no puede ser el valor por defecto";
+		var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00066);
 		return new ProductTypeIdIsDefaultValueException(userMessage);
 	}
 
