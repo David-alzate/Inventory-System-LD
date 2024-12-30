@@ -10,30 +10,26 @@ public class RegisterNewProductDTO {
 
 	private String name;
 	private BigDecimal price;
-	private int stock;
 	private ProductTypeDTO productType;
 	private SupplierDTO supplier;
 
 	public RegisterNewProductDTO() {
 		setName(TextHelper.EMPTY);
 		setPrice(BigDecimal.ZERO);
-		setStock(0);
 		setProductType(ProductTypeDTO.create());
 		setSupplier(SupplierDTO.create());
 	}
 
-	public RegisterNewProductDTO(String name, BigDecimal price, int stock, ProductTypeDTO productType,
-			SupplierDTO supplier) {
+	public RegisterNewProductDTO(String name, BigDecimal price, ProductTypeDTO productType, SupplierDTO supplier) {
 		setName(name);
 		setPrice(price);
-		setStock(stock);
 		setProductType(productType);
 		setSupplier(supplier);
 	}
 
-	public static final RegisterNewProductDTO create(String name, BigDecimal price, int stock,
-			ProductTypeDTO productType, SupplierDTO supplier) {
-		return new RegisterNewProductDTO(name, price, stock, productType, supplier);
+	public static final RegisterNewProductDTO create(String name, BigDecimal price, ProductTypeDTO productType,
+			SupplierDTO supplier) {
+		return new RegisterNewProductDTO(name, price, productType, supplier);
 	}
 
 	public static final RegisterNewProductDTO create() {
@@ -54,14 +50,6 @@ public class RegisterNewProductDTO {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-	}
-
-	public int getStock() {
-		return stock;
-	}
-
-	public void setStock(int stock) {
-		this.stock = stock;
 	}
 
 	public ProductTypeDTO getProductType() {

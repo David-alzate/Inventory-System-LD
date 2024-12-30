@@ -13,7 +13,6 @@ public class ProductDTO {
 	private UUID id;
 	private String name;
 	private BigDecimal price;
-	private int stock;
 	private ProductTypeDTO productType;
 	private SupplierDTO supplier;
 
@@ -21,24 +20,21 @@ public class ProductDTO {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 		setPrice(BigDecimal.ZERO);
-		setStock(0);
 		setProductType(ProductTypeDTO.create());
 		setSupplier(SupplierDTO.create());
 	}
 
-	public ProductDTO(UUID id, String name, BigDecimal price, int stock, ProductTypeDTO productType,
-			SupplierDTO supplier) {
+	public ProductDTO(UUID id, String name, BigDecimal price, ProductTypeDTO productType, SupplierDTO supplier) {
 		setId(id);
 		setName(name);
 		setPrice(price);
-		setStock(stock);
 		setProductType(productType);
 		setSupplier(supplier);
 	}
 
-	public static final ProductDTO create(UUID id, String name, BigDecimal price, int stock, ProductTypeDTO productType,
+	public static final ProductDTO create(UUID id, String name, BigDecimal price, ProductTypeDTO productType,
 			SupplierDTO supplier) {
-		return new ProductDTO(id, name, price, stock, productType, supplier);
+		return new ProductDTO(id, name, price, productType, supplier);
 	}
 
 	public static final ProductDTO create() {
@@ -67,14 +63,6 @@ public class ProductDTO {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-	}
-
-	public int getStock() {
-		return stock;
-	}
-
-	public void setStock(int stock) {
-		this.stock = stock;
 	}
 
 	public ProductTypeDTO getProductType() {

@@ -27,7 +27,7 @@ public class RegisterNewProductImpl implements RegisterNewProduct {
 		registerNewProductRulesValidator.validate(domain);
 
 		var productEntity = ProductEntity.create().setId(domain.getId()).setName(domain.getName())
-				.setPrice(domain.getPrice()).setStock(domain.getStock())
+				.setPrice(domain.getPrice())
 				.setProductType(ProductTypeEntityMapper.INSTANCE.toEntity(domain.getProductType()))
 				.setSupplier(SupplierEntityMapper.INSTANCE.toEntity(domain.getSupplier()));
 
