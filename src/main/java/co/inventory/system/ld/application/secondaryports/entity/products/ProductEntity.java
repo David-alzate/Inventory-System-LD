@@ -28,9 +28,6 @@ public class ProductEntity {
 	@Column(name = "price")
 	private BigDecimal price;
 
-	@Column(name = "stock")
-	private int stock;
-
 	@ManyToOne
 	@JoinColumn(name = "productType")
 	private ProductTypeEntity productType;
@@ -43,34 +40,32 @@ public class ProductEntity {
 		setId(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 		setPrice(BigDecimal.ZERO);
-		setStock(0);
 		setProductType(ProductTypeEntity.create());
 		setSupplier(SupplierEntity.create());
 	}
 
-	public ProductEntity(UUID id, String name, BigDecimal price, int stock, ProductTypeEntity productType,
+	public ProductEntity(UUID id, String name, BigDecimal price, ProductTypeEntity productType,
 			SupplierEntity supplier) {
 		setId(id);
 		setName(name);
 		setPrice(price);
-		setStock(stock);
 		setProductType(productType);
 		setSupplier(supplier);
 	}
 
-	public static final ProductEntity create(UUID id, String name, BigDecimal price, int stock,
-			ProductTypeEntity productType, SupplierEntity supplier) {
-		return new ProductEntity(id, name, price, stock, productType, supplier);
+	public static final ProductEntity create(UUID id, String name, BigDecimal price, ProductTypeEntity productType,
+			SupplierEntity supplier) {
+		return new ProductEntity(id, name, price, productType, supplier);
 	}
 
 	public static final ProductEntity create(UUID id) {
-		return new ProductEntity(id, TextHelper.EMPTY, BigDecimal.ZERO, 0, ProductTypeEntity.create(),
+		return new ProductEntity(id, TextHelper.EMPTY, BigDecimal.ZERO, ProductTypeEntity.create(),
 				SupplierEntity.create());
 	}
 
 	public static final ProductEntity create() {
-		return new ProductEntity(UUIDHelper.getDefault(), TextHelper.EMPTY, BigDecimal.ZERO, 0,
-				ProductTypeEntity.create(), SupplierEntity.create());
+		return new ProductEntity(UUIDHelper.getDefault(), TextHelper.EMPTY, BigDecimal.ZERO, ProductTypeEntity.create(),
+				SupplierEntity.create());
 	}
 
 	public UUID getId() {
@@ -97,15 +92,6 @@ public class ProductEntity {
 
 	public ProductEntity setPrice(BigDecimal price) {
 		this.price = price;
-		return this;
-	}
-
-	public int getStock() {
-		return stock;
-	}
-
-	public ProductEntity setStock(int stock) {
-		this.stock = stock;
 		return this;
 	}
 

@@ -10,16 +10,14 @@ public class ProductDomain extends Domain {
 
 	private String name;
 	private BigDecimal price;
-	private int stock;
 	private ProductTypeDomain productType;
 	private SupplierDomain supplier;
 
-	public ProductDomain(UUID id, String name, BigDecimal price, int stock, ProductTypeDomain productType,
+	public ProductDomain(UUID id, String name, BigDecimal price, ProductTypeDomain productType,
 			SupplierDomain supplier) {
 		super(id);
 		setName(name);
 		setPrice(price);
-		setStock(stock);
 		setProductType(productType);
 		setSupplier(supplier);
 	}
@@ -38,14 +36,6 @@ public class ProductDomain extends Domain {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
-	}
-
-	public int getStock() {
-		return stock;
-	}
-
-	public void setStock(int stock) {
-		this.stock = stock;
 	}
 
 	public ProductTypeDomain getProductType() {
