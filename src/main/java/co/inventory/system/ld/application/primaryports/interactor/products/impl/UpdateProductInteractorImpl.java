@@ -22,7 +22,6 @@ public class UpdateProductInteractorImpl implements UpdateProductInteractor {
 
 	@Override
 	public void execute(ProductDTO data) {
-		System.out.println("Producto Interactor: " + data.getId());
 		try {
 			var productDomain = ProductDTOMapper.INSTANCE.toDomain(data);
 			updateProduct.execute(productDomain);

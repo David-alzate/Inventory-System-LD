@@ -84,7 +84,7 @@ public class ProductController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<RegisterNewProductResponse> modificar(@PathVariable UUID id, @RequestBody ProductDTO productDTO) {
+	public ResponseEntity<RegisterNewProductResponse> update(@PathVariable UUID id, @RequestBody ProductDTO productDTO) {
 
 		var httpStatusCode = HttpStatus.ACCEPTED;
 		var productResponse = new RegisterNewProductResponse();
