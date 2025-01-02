@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.inventory.system.ld.application.primaryports.dto.products.ProductDTO;
 import co.inventory.system.ld.application.primaryports.dto.products.RegisterNewProductDTO;
+import co.inventory.system.ld.application.primaryports.interactor.products.DeleteProductInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.GetProductInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.RegisterNewProductInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.UpdateProductInteractor;
@@ -30,12 +32,16 @@ public class ProductController {
 	private final RegisterNewProductInteractor registerNewProductInteractor;
 	private final GetProductInteractor getProductInteractor;
 	private final UpdateProductInteractor updateProductInteractor;
+	private final DeleteProductInteractor deleteProductInteractor;
 
 	public ProductController(RegisterNewProductInteractor registerNewProductInteractor,
-			GetProductInteractor getProductInteractor, UpdateProductInteractor updateProductInteractor) {
+			GetProductInteractor getProductInteractor, UpdateProductInteractor updateProductInteractor,
+			DeleteProductInteractor deleteProductInteractor) {
+		super();
 		this.registerNewProductInteractor = registerNewProductInteractor;
 		this.getProductInteractor = getProductInteractor;
 		this.updateProductInteractor = updateProductInteractor;
+		this.deleteProductInteractor = deleteProductInteractor;
 	}
 
 	@PostMapping
@@ -84,10 +90,10 @@ public class ProductController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<RegisterNewProductResponse> update(@PathVariable UUID id, @RequestBody ProductDTO productDTO) {
+	public ResponseEntity<ProductResponse> update(@PathVariable UUID id, @RequestBody ProductDTO productDTO) {
 
 		var httpStatusCode = HttpStatus.ACCEPTED;
-		var productResponse = new RegisterNewProductResponse();
+		var productResponse = new ProductResponse();
 
 		try {
 			productDTO.setId(id);
@@ -103,6 +109,28 @@ public class ProductController {
 			productResponse.getMensajes().add(mensajeUsuario);
 		}
 		return new ResponseEntity<>(productResponse, httpStatusCode);
+	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<ProductResponse> eliminar(@PathVariable UUID id) {
+
+		var httpStatusCode = HttpStatus.ACCEPTED;
+		var empleadoResponse = new ProductResponse();
+
+		try {
+			deleteProductInteractor.execute(id);
+			empleadoResponse.getMensajes().add("Producto eliminado existosamente");
+		} catch (final InventorySystemException exception) {
+			httpStatusCode = HttpStatus.BAD_REQUEST;
+			empleadoResponse.getMensajes().add(exception.getUserMessage());
+		} catch (final Exception exception) {
+			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
+
+			var mensajeUsuario = "Se ha presentado un problema tratando de eliminar la informacion del Producto";
+			empleadoResponse.getMensajes().add(mensajeUsuario);
+
+		}
+		return new ResponseEntity<>(empleadoResponse, httpStatusCode);
 	}
 
 }

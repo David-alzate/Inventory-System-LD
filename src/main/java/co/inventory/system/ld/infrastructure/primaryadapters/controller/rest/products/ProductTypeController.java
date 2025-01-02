@@ -15,7 +15,7 @@ import co.inventory.system.ld.application.primaryports.interactor.products.Regis
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
 import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
-import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.GetProductTypeResponse;
+import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.ProductTypeResponse;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.products.RegisterNewProductTypeResponse;
 
 @RestController
@@ -54,10 +54,10 @@ public class ProductTypeController {
 	}
 
 	@GetMapping
-	public ResponseEntity<GetProductTypeResponse> getCustomers() {
+	public ResponseEntity<ProductTypeResponse> getCustomers() {
 
 		var httpStatusCode = HttpStatus.ACCEPTED;
-		var productTypeResponse = new GetProductTypeResponse();
+		var productTypeResponse = new ProductTypeResponse();
 
 		try {
 			var productTypeDTO = ProductTypeDTO.create();
