@@ -8,6 +8,8 @@ import co.inventory.system.ld.application.primaryports.mapper.products.ProductDT
 import co.inventory.system.ld.application.usecase.products.UpdateProduct;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -28,8 +30,8 @@ public class UpdateProductInteractorImpl implements UpdateProductInteractor {
 		} catch (InventorySystemException exception) {
 			throw exception;
 		} catch (Exception exception) {
-			var userMessage = "Se ha presentado un problema modificando el tipo de producto";
-			var technicalMessage = "Se ha presentado un problema INESPERADO modificando el tipo de producto";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00089);
+			var technicalMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00090);
 
 			throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
 

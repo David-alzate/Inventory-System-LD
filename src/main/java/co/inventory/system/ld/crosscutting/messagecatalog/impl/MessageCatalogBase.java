@@ -233,10 +233,30 @@ public class MessageCatalogBase implements MessageCatalog {
 				"El id del tipo de usuario no puede ser el valor por defecto"));
 		messages.put(MessageCode.M00087.getIdentifer(), new Message(MessageCode.M00087,
 				"El id del tipo de usuario no puede ser nulo."));
-
 		
+		// Product Update - Exception 
 		
-
+		messages.put(MessageCode.M00088.getIdentifer(), new Message(MessageCode.M00088,
+				"El producto no existe"));
+		
+		// Product Update - Interactor and controller
+		
+		messages.put(MessageCode.M00089.getIdentifer(), new Message(MessageCode.M00089,
+				"Se ha presentado un problema modificando el tipo de producto"));
+		messages.put(MessageCode.M00090.getIdentifer(), new Message(MessageCode.M00090,
+				"Se ha presentado un problema INESPERADO modificando el tipo de producto"));
+		
+		messages.put(MessageCode.M00091.getIdentifer(), new Message(MessageCode.M00091,
+				"Producto modificado existosamente "));
+		
+		// Product Delete - Interactor and controller
+		
+		messages.put(MessageCode.M00092.getIdentifer(), new Message(MessageCode.M00092,
+				"Se ha presentado un problema tratando de eliminar la informacion del Producto"));
+		messages.put(MessageCode.M00093.getIdentifer(), new Message(MessageCode.M00093,
+				"Producto eliminado existosamente"));
+	
+		
 	}
 
 	@Override

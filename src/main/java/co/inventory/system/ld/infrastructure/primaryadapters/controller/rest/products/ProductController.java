@@ -37,7 +37,6 @@ public class ProductController {
 	public ProductController(RegisterNewProductInteractor registerNewProductInteractor,
 			GetProductInteractor getProductInteractor, UpdateProductInteractor updateProductInteractor,
 			DeleteProductInteractor deleteProductInteractor) {
-		super();
 		this.registerNewProductInteractor = registerNewProductInteractor;
 		this.getProductInteractor = getProductInteractor;
 		this.updateProductInteractor = updateProductInteractor;
@@ -98,14 +97,14 @@ public class ProductController {
 		try {
 			productDTO.setId(id);
 			updateProductInteractor.execute(productDTO);
-			productResponse.getMensajes().add("Producto modificado existosamente ");
+			productResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00091));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			productResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Se ha presentado un problema tratando de modificar la informacion del Producto";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00089);
 			productResponse.getMensajes().add(mensajeUsuario);
 		}
 		return new ResponseEntity<>(productResponse, httpStatusCode);
@@ -119,14 +118,14 @@ public class ProductController {
 
 		try {
 			deleteProductInteractor.execute(id);
-			empleadoResponse.getMensajes().add("Producto eliminado existosamente");
+			empleadoResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00093));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			empleadoResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Se ha presentado un problema tratando de eliminar la informacion del Producto";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00092);
 			empleadoResponse.getMensajes().add(mensajeUsuario);
 
 		}
