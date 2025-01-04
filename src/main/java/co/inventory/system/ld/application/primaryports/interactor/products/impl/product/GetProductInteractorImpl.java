@@ -1,13 +1,13 @@
-package co.inventory.system.ld.application.primaryports.interactor.products.impl;
+package co.inventory.system.ld.application.primaryports.interactor.products.impl.product;
 
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.primaryports.dto.products.ProductDTO;
-import co.inventory.system.ld.application.primaryports.interactor.products.GetProductInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.products.product.GetProductInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.products.ProductDTOMapper;
-import co.inventory.system.ld.application.usecase.products.GetProduct;
+import co.inventory.system.ld.application.usecase.products.product.GetProduct;
 
 @Service
 public class GetProductInteractorImpl implements GetProductInteractor {

@@ -1,11 +1,11 @@
-package co.inventory.system.ld.application.usecase.products.impl;
+package co.inventory.system.ld.application.usecase.products.impl.producttype;
 
 import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.secondaryports.entity.products.ProductTypeEntity;
 import co.inventory.system.ld.application.secondaryports.repository.products.ProductTypeRepository;
-import co.inventory.system.ld.application.usecase.products.RegisterNewProductType;
 import co.inventory.system.ld.application.usecase.products.impl.rulesvalidatorimpl.producttype.RegisterNewProductTypeRulesValidatorImpl;
+import co.inventory.system.ld.application.usecase.products.producttype.RegisterNewProductType;
 import co.inventory.system.ld.domain.products.ProductTypeDomain;
 
 @Service

@@ -242,9 +242,9 @@ public class MessageCatalogBase implements MessageCatalog {
 		// Product Update - Interactor and controller
 		
 		messages.put(MessageCode.M00089.getIdentifer(), new Message(MessageCode.M00089,
-				"Se ha presentado un problema modificando el tipo de producto"));
+				"Se ha presentado un problema modificando el producto"));
 		messages.put(MessageCode.M00090.getIdentifer(), new Message(MessageCode.M00090,
-				"Se ha presentado un problema INESPERADO modificando el tipo de producto"));
+				"Se ha presentado un problema INESPERADO modificando el producto"));
 		
 		messages.put(MessageCode.M00091.getIdentifer(), new Message(MessageCode.M00091,
 				"Producto modificado existosamente "));

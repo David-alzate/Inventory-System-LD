@@ -1,11 +1,11 @@
-package co.inventory.system.ld.application.usecase.products.impl;
+package co.inventory.system.ld.application.usecase.products.impl.product;
 
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.secondaryports.repository.products.ProductsRepository;
-import co.inventory.system.ld.application.usecase.products.DeleteProduct;
+import co.inventory.system.ld.application.usecase.products.product.DeleteProduct;
 import co.inventory.system.ld.application.usecase.products.rulesvalidator.product.DeleteProductRulesValidator;
 import jakarta.transaction.Transactional;
 

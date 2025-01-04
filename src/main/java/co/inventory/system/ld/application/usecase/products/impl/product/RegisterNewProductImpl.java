@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.usecase.products.impl;
+package co.inventory.system.ld.application.usecase.products.impl.product;
 
 import org.springframework.stereotype.Service;
 
@@ -6,7 +6,7 @@ import co.inventory.system.ld.application.secondaryports.entity.products.Product
 import co.inventory.system.ld.application.secondaryports.mapper.products.ProductTypeEntityMapper;
 import co.inventory.system.ld.application.secondaryports.mapper.suppliers.SupplierEntityMapper;
 import co.inventory.system.ld.application.secondaryports.repository.products.ProductsRepository;
-import co.inventory.system.ld.application.usecase.products.RegisterNewProduct;
+import co.inventory.system.ld.application.usecase.products.product.RegisterNewProduct;
 import co.inventory.system.ld.application.usecase.products.rulesvalidator.product.RegisterNewProductRulesValidator;
 import co.inventory.system.ld.domain.products.ProductDomain;
 

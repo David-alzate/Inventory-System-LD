@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.inventory.system.ld.application.primaryports.dto.products.ProductDTO;
 import co.inventory.system.ld.application.primaryports.dto.products.RegisterNewProductDTO;
-import co.inventory.system.ld.application.primaryports.interactor.products.DeleteProductInteractor;
-import co.inventory.system.ld.application.primaryports.interactor.products.GetProductInteractor;
-import co.inventory.system.ld.application.primaryports.interactor.products.RegisterNewProductInteractor;
-import co.inventory.system.ld.application.primaryports.interactor.products.UpdateProductInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.products.product.DeleteProductInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.products.product.GetProductInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.products.product.RegisterNewProductInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.products.product.UpdateProductInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
 import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
