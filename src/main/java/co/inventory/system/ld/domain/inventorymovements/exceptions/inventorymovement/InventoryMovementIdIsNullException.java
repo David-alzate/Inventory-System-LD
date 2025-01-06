@@ -1,4 +1,4 @@
-package co.inventory.system.ld.domain.inventorymovements.exceptions;
+package co.inventory.system.ld.domain.inventorymovements.exceptions.inventorymovement;
 
 import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemException;
 
