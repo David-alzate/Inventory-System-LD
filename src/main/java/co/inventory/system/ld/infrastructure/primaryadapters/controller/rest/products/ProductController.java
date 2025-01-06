@@ -114,22 +114,22 @@ public class ProductController {
 	public ResponseEntity<ProductResponse> eliminar(@PathVariable UUID id) {
 
 		var httpStatusCode = HttpStatus.ACCEPTED;
-		var empleadoResponse = new ProductResponse();
+		var productResponse = new ProductResponse();
 
 		try {
 			deleteProductInteractor.execute(id);
-			empleadoResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00093));
+			productResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00093));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
-			empleadoResponse.getMensajes().add(exception.getUserMessage());
+			productResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
 			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00092);
-			empleadoResponse.getMensajes().add(mensajeUsuario);
+			productResponse.getMensajes().add(mensajeUsuario);
 
 		}
-		return new ResponseEntity<>(empleadoResponse, httpStatusCode);
+		return new ResponseEntity<>(productResponse, httpStatusCode);
 	}
 
 }
