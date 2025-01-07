@@ -148,7 +148,19 @@ public enum MessageCode {
 	// Product Delete - Interactor and controller
 	
 	M00092(MessageType.USER, CategoryMessage.ERROR, "00092", true),
-	M00093(MessageType.USER, CategoryMessage.SUCCESS, "00093", true);
+	M00093(MessageType.USER, CategoryMessage.SUCCESS, "00093", true),
+	
+	// Product Type Update - Interactor and controller
+	
+	M00094(MessageType.USER, CategoryMessage.ERROR, "00094", true),
+	M00095(MessageType.USER, CategoryMessage.ERROR, "00095", true),
+	
+	M00096(MessageType.USER, CategoryMessage.SUCCESS, "00096", true),
+	
+	// Product Type Delete - Interactor and controller
+	
+	M00097(MessageType.USER, CategoryMessage.ERROR, "00097", true),
+	M00098(MessageType.USER, CategoryMessage.SUCCESS, "00098", true);
 
 	
 

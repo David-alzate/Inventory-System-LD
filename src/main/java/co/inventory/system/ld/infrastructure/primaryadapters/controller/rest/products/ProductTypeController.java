@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.inventory.system.ld.application.primaryports.dto.products.ProductTypeDTO;
 import co.inventory.system.ld.application.primaryports.dto.products.RegisterNewProductTypeDTO;
-import co.inventory.system.ld.application.primaryports.interactor.products.producttype.DeleteProductType;
+import co.inventory.system.ld.application.primaryports.interactor.products.producttype.DeleteProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.producttype.GetProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.producttype.RegisterNewProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.products.producttype.UpdateProductTypeInteractor;
@@ -32,11 +32,11 @@ public class ProductTypeController {
 	private GetProductTypeInteractor getProductType;
 	private RegisterNewProductTypeInteractor registerNewProductTypeInteractor;
 	private UpdateProductTypeInteractor updateProductInteractor;
-	private DeleteProductType deleteProductTypeInteractor;
+	private DeleteProductTypeInteractor deleteProductTypeInteractor;
 
 	public ProductTypeController(GetProductTypeInteractor getProductType,
 			RegisterNewProductTypeInteractor registerNewProductTypeInteractor,
-			UpdateProductTypeInteractor updateProductInteractor, DeleteProductType deleteProductTypeInteractor) {
+			UpdateProductTypeInteractor updateProductInteractor, DeleteProductTypeInteractor deleteProductTypeInteractor) {
 		this.getProductType = getProductType;
 		this.registerNewProductTypeInteractor = registerNewProductTypeInteractor;
 		this.updateProductInteractor = updateProductInteractor;
@@ -99,14 +99,14 @@ public class ProductTypeController {
 		try {
 			productTypeDTO.setId(id);
 			updateProductInteractor.execute(productTypeDTO);
-			productTypeResponse.getMensajes().add("Tipo de Producto modificado existosamente");
+			productTypeResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00096));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			productTypeResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Se ha presentado un problema modificando el producto";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00094);
 			productTypeResponse.getMensajes().add(mensajeUsuario);
 		}
 		return new ResponseEntity<>(productTypeResponse, httpStatusCode);
@@ -120,14 +120,14 @@ public class ProductTypeController {
 
 		try {
 			deleteProductTypeInteractor.execute(id);
-			productTypeResponse.getMensajes().add("Tipo de Producto eliminado existosamente");
+			productTypeResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00098));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			productTypeResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Se ha presentado un problema eliminando el producto";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00097);
 			productTypeResponse.getMensajes().add(mensajeUsuario);
 
 		}
