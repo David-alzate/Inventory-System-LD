@@ -5,8 +5,8 @@ import co.inventory.system.ld.infrastructure.primaryadapters.controller.response
 
 import java.util.ArrayList;
 
-public class GetSuppliersResponse extends Response <SupplierDTO> {
-    public GetSuppliersResponse() {
+public class SuppliersResponse extends Response <SupplierDTO> {
+    public SuppliersResponse() {
         setMensajes(new ArrayList<String>());
         setDatos(new ArrayList<>());
     }
