@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.primaryports.interactor.products;
+package co.inventory.system.ld.application.primaryports.interactor.products.product;
 
 import java.util.List;
 

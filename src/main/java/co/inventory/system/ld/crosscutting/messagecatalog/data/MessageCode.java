@@ -133,8 +133,35 @@ public enum MessageCode {
 	
 	M00085(MessageType.USER, CategoryMessage.ERROR, "00085", true),
 	M00086(MessageType.USER, CategoryMessage.ERROR, "00086", true),
-	M00087(MessageType.USER, CategoryMessage.ERROR, "00087", true);
+	M00087(MessageType.USER, CategoryMessage.ERROR, "00087", true),
 	
+	// Product Update - Exception 
+	M00088(MessageType.USER, CategoryMessage.ERROR, "00088", true),
+	
+	// Product Update - Interactor and controller
+	
+	M00089(MessageType.USER, CategoryMessage.ERROR, "00089", true),
+	M00090(MessageType.USER, CategoryMessage.ERROR, "00090", true),
+	
+	M00091(MessageType.USER, CategoryMessage.SUCCESS, "00091", true),
+	
+	// Product Delete - Interactor and controller
+	
+	M00092(MessageType.USER, CategoryMessage.ERROR, "00092", true),
+	M00093(MessageType.USER, CategoryMessage.SUCCESS, "00093", true),
+	
+	// Product Type Update - Interactor and controller
+	
+	M00094(MessageType.USER, CategoryMessage.ERROR, "00094", true),
+	M00095(MessageType.USER, CategoryMessage.ERROR, "00095", true),
+	
+	M00096(MessageType.USER, CategoryMessage.SUCCESS, "00096", true),
+	
+	// Product Type Delete - Interactor and controller
+	
+	M00097(MessageType.USER, CategoryMessage.ERROR, "00097", true),
+	M00098(MessageType.USER, CategoryMessage.SUCCESS, "00098", true);
+
 	
 
 	private MessageType type;
