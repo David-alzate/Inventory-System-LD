@@ -22,6 +22,6 @@ public class GetSupplierInteractorImpl implements GetSupplierInteractor {
     public List<SupplierDTO> execute(SupplierDTO data) {
         var supplierDomain= SupplierDTOMapper.INSTANCE.toDomain(data);
         var results= getSupplier.execute(supplierDomain);
-        return SupplierDTOMapper.INSTANCE.toDTO(results);
+        return SupplierDTOMapper.INSTANCE.toDTOCollection(results);
     }
 }

@@ -16,5 +16,5 @@ public interface SupplierDTOMapper {
 
     SupplierDTO toDTO(SupplierDomain supplierDomain);
 
-    List<SupplierDTO> toDTO(List<SupplierDomain> supplierDomainList);
+    List<SupplierDTO> toDTOCollection(List<SupplierDomain> supplierDomainList);
 }

@@ -10,7 +10,6 @@ public class Domain {
 
 	protected Domain(final UUID id) {
 		setId(id);
-
 	}
 
 	public final UUID getId() {
