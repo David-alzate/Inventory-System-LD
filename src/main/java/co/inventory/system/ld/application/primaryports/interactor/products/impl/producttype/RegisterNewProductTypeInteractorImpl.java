@@ -1,11 +1,11 @@
-package co.inventory.system.ld.application.primaryports.interactor.products.impl;
+package co.inventory.system.ld.application.primaryports.interactor.products.impl.producttype;
 
 import org.springframework.stereotype.Service;
 
 import co.inventory.system.ld.application.primaryports.dto.products.RegisterNewProductTypeDTO;
-import co.inventory.system.ld.application.primaryports.interactor.products.RegisterNewProductTypeInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.products.producttype.RegisterNewProductTypeInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.products.RegisterNewProductTypeDTOMapper;
-import co.inventory.system.ld.application.usecase.products.RegisterNewProductType;
+import co.inventory.system.ld.application.usecase.products.producttype.RegisterNewProductType;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;

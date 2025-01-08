@@ -1,4 +1,4 @@
-package co.inventory.system.ld.application.usecase.products;
+package co.inventory.system.ld.application.usecase.products.product;
 
 import java.util.List;
 
