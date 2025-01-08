@@ -1,11 +1,11 @@
 package co.inventory.system.ld.infrastructure.primaryadapters.controller.rest.inventorymovements;
 
 import co.inventory.system.ld.application.primaryports.dto.inventorymovements.MovementTypeDTO;
-import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.GetMovementTypeInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.movementtype.GetMovementTypeInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
 import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
-import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.inventorymovements.GetMovementTypeResponse;
+import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.inventorymovements.MovementTypeResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +23,10 @@ public class MovementTypeControler {
     }
 
     @GetMapping
-    public ResponseEntity<GetMovementTypeResponse> getMovementType(){
+    public ResponseEntity<MovementTypeResponse> getMovementType(){
 
         var httpStatusCode = HttpStatus.ACCEPTED;
-        var movementTypeRespose = new GetMovementTypeResponse();
+        var movementTypeRespose = new MovementTypeResponse();
 
         try {
             var movementTypeDTO = MovementTypeDTO.create();

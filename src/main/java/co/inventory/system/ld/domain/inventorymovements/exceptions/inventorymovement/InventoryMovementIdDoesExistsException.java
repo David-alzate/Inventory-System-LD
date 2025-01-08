@@ -7,4 +7,9 @@ public class InventoryMovementIdDoesExistsException extends RuleInventorySystemE
     public InventoryMovementIdDoesExistsException(String userMessage) {
         super(userMessage, userMessage, new Exception());
     }
+
+    public static  InventoryMovementIdDoesExistsException create(){
+        var userMessage = "El id de movimiento de inventario ya existe en el sistema";
+        return new InventoryMovementIdDoesExistsException(userMessage);
+    }
 }

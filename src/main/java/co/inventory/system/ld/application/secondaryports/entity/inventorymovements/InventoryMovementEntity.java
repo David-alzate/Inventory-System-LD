@@ -28,7 +28,7 @@ public class InventoryMovementEntity {
     private int quantity;
 
     @ManyToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name = "users")
     private UserEntity user;
 
     public InventoryMovementEntity() {

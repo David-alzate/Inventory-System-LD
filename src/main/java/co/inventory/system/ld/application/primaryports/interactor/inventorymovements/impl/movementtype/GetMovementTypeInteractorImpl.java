@@ -1,9 +1,9 @@
-package co.inventory.system.ld.application.primaryports.interactor.inventorymovements.impl;
+package co.inventory.system.ld.application.primaryports.interactor.inventorymovements.impl.movementtype;
 
 import co.inventory.system.ld.application.primaryports.dto.inventorymovements.MovementTypeDTO;
-import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.GetMovementTypeInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.movementtype.GetMovementTypeInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.inventorymovements.MovementTypeDTOMapper;
-import co.inventory.system.ld.application.usecase.inventorymovements.GetMovementType;
+import co.inventory.system.ld.application.usecase.inventorymovements.movementtype.GetMovementType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -2,7 +2,7 @@ package co.inventory.system.ld.application.usecase.inventorymovements.impl;
 
 import co.inventory.system.ld.application.secondaryports.mapper.inventorymovements.MovementTypeEntityMapper;
 import co.inventory.system.ld.application.secondaryports.repository.inventorymovements.MovementTypeRepository;
-import co.inventory.system.ld.application.usecase.inventorymovements.GetMovementType;
+import co.inventory.system.ld.application.usecase.inventorymovements.movementtype.GetMovementType;
 import co.inventory.system.ld.domain.inventorymovements.MovementTypeDomain;
 import org.springframework.stereotype.Service;
 
