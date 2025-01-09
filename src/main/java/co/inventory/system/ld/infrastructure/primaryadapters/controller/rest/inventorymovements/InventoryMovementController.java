@@ -2,9 +2,9 @@ package co.inventory.system.ld.infrastructure.primaryadapters.controller.rest.in
 
 import co.inventory.system.ld.application.primaryports.dto.inventorymovements.InventoryMovementDTO;
 import co.inventory.system.ld.application.primaryports.dto.inventorymovements.RegisterNewInventoryMovementDTO;
-import co.inventory.system.ld.application.primaryports.dto.products.ProductDTO;
 import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.inventorymovement.GetInventoryMovementInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.inventorymovement.RegisterNewInventoryMovementInteractor;
+import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.inventorymovement.UpdateInventoryMovementInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
 import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
@@ -14,16 +14,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/inventorymovements/api/v1/inventorymovement")
 public class InventoryMovementController {
 
     private final RegisterNewInventoryMovementInteractor  registerNewInventoryMovementInteractor;
     private final GetInventoryMovementInteractor getInventoryMovementInteractor;
+    private final UpdateInventoryMovementInteractor updateInventoryMovementInteractor;
 
-    public InventoryMovementController(RegisterNewInventoryMovementInteractor registerNewInventoryMovementInteractor, GetInventoryMovementInteractor getInventoryMovementInteractor) {
+    public InventoryMovementController(RegisterNewInventoryMovementInteractor registerNewInventoryMovementInteractor, GetInventoryMovementInteractor getInventoryMovementInteractor, UpdateInventoryMovementInteractor updateInventoryMovementInteractor) {
         this.registerNewInventoryMovementInteractor = registerNewInventoryMovementInteractor;
         this.getInventoryMovementInteractor = getInventoryMovementInteractor;
+        this.updateInventoryMovementInteractor = updateInventoryMovementInteractor;
     }
 
     @PostMapping
@@ -68,6 +72,28 @@ public class InventoryMovementController {
             inventoryMovementResponse.getMensajes().add(userMessage);
         }
 
+        return new ResponseEntity<>(inventoryMovementResponse, httpStatusCode);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<InventoryMovementResponse> update(@PathVariable UUID id, @RequestBody InventoryMovementDTO inventoryMovementDTO) {
+
+        var httpStatusCode = HttpStatus.ACCEPTED;
+        var inventoryMovementResponse = new InventoryMovementResponse();
+
+        try {
+            inventoryMovementDTO.setId(id);
+            updateInventoryMovementInteractor.execute(inventoryMovementDTO);
+            inventoryMovementResponse.getMensajes().add("Se ha actualizado con exito el movimiento de inventario");
+        } catch (final InventorySystemException exception) {
+            httpStatusCode = HttpStatus.BAD_REQUEST;
+            inventoryMovementResponse.getMensajes().add(exception.getUserMessage());
+        } catch (final Exception exception) {
+            httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
+
+            var mensajeUsuario = "Ha ocurrido un error tratando de actualizar el movimiento de inventario";
+            inventoryMovementResponse.getMensajes().add(mensajeUsuario);
+        }
         return new ResponseEntity<>(inventoryMovementResponse, httpStatusCode);
     }
 

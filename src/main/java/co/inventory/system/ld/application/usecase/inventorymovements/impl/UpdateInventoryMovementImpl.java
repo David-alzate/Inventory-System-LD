@@ -5,25 +5,26 @@ import co.inventory.system.ld.application.secondaryports.mapper.inventorymovemen
 import co.inventory.system.ld.application.secondaryports.mapper.products.ProductEntityMapper;
 import co.inventory.system.ld.application.secondaryports.mapper.users.UserEntityMapper;
 import co.inventory.system.ld.application.secondaryports.repository.inventorymovements.InventoryMovementsRepository;
-import co.inventory.system.ld.application.usecase.inventorymovements.inventorymovement.RegisterNewInventoryMovement;
-import co.inventory.system.ld.application.usecase.inventorymovements.rulesvalidator.RegisterNewInventoryMovementRulesValidator;
+import co.inventory.system.ld.application.usecase.inventorymovements.inventorymovement.UpdateInventoryMovement;
+import co.inventory.system.ld.application.usecase.inventorymovements.rulesvalidator.UpdateInventoryMovementRulesValidator;
 import co.inventory.system.ld.domain.inventorymovements.InventoryMovementDomain;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RegisterNewInventoryMovementImpl implements RegisterNewInventoryMovement {
+public class UpdateInventoryMovementImpl implements UpdateInventoryMovement {
 
-    private final RegisterNewInventoryMovementRulesValidator registerNewInventoryMovementRulesValidator;
-    private final InventoryMovementsRepository inventoryMovementsRepository;
+    private InventoryMovementsRepository  inventoryMovementsRepository;
+    private UpdateInventoryMovementRulesValidator  updateInventoryMovementRulesValidator;
 
-    public RegisterNewInventoryMovementImpl(RegisterNewInventoryMovementRulesValidator registerNewInventoryMovementRulesValidator, InventoryMovementsRepository inventoryMovementsRepository) {
-        this.registerNewInventoryMovementRulesValidator = registerNewInventoryMovementRulesValidator;
+    public UpdateInventoryMovementImpl(InventoryMovementsRepository inventoryMovementsRepository, UpdateInventoryMovementRulesValidator updateInventoryMovementRulesValidator) {
         this.inventoryMovementsRepository = inventoryMovementsRepository;
+        this.updateInventoryMovementRulesValidator = updateInventoryMovementRulesValidator;
     }
 
     @Override
     public void execute(InventoryMovementDomain domain) {
-        registerNewInventoryMovementRulesValidator.validate(domain);
+
+       updateInventoryMovementRulesValidator.validate(domain);
 
         var inventoryMovementEntity= InventoryMovementEntity.create().setId(domain.getId()).setQuantity(domain.getQuantity())
                 .setMovementType(MovementTypeEntityMapper.INSTANCE.toEntity(domain.getMovementType()))
