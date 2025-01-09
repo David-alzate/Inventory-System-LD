@@ -7,8 +7,6 @@ import co.inventory.system.ld.application.primaryports.interactor.inventorymovem
 import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.inventorymovement.RegisterNewInventoryMovementInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.inventorymovements.inventorymovement.UpdateInventoryMovementInteractor;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
-import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
-import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.inventorymovements.InventoryMovementResponse;
 import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.inventorymovements.RegisterNewInventoryMovementResponse;
 import org.springframework.http.HttpStatus;
@@ -116,7 +114,7 @@ public class InventoryMovementController {
         } catch (final Exception exception) {
             httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-            var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00092);
+            var userMessage = "Ha ocurrido un problema tratando de obtener el movimiento de inventario";
             inventoryMovementResponse.getMensajes().add(userMessage);
 
         }
