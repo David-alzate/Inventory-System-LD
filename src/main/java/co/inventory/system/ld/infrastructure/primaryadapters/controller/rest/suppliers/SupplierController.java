@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.inventory.system.ld.application.primaryports.dto.suppliers.RegisterNewSupplierDTO;
 import co.inventory.system.ld.application.primaryports.dto.suppliers.SupplierDTO;
+import co.inventory.system.ld.application.primaryports.interactor.suppliers.DeleteSupplierInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.suppliers.GetSupplierInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.suppliers.RegisterNewSupplierInteractor;
 import co.inventory.system.ld.application.primaryports.interactor.suppliers.UpdateSupplierInteractor;
@@ -30,12 +32,15 @@ public class SupplierController {
 	private final RegisterNewSupplierInteractor registerNewSupplierInteractor;
 	private final GetSupplierInteractor getSupplierInteractor;
 	private final UpdateSupplierInteractor updateSupplierInteractor;
+	private final DeleteSupplierInteractor deleteSupplierInteractor;
 
 	public SupplierController(RegisterNewSupplierInteractor registerNewSupplierInteractor,
-			GetSupplierInteractor getSupplierInteractor, UpdateSupplierInteractor updateSupplierInteractor) {
+			GetSupplierInteractor getSupplierInteractor, UpdateSupplierInteractor updateSupplierInteractor,
+			DeleteSupplierInteractor deleteSupplierInteractor) {
 		this.registerNewSupplierInteractor = registerNewSupplierInteractor;
 		this.getSupplierInteractor = getSupplierInteractor;
 		this.updateSupplierInteractor = updateSupplierInteractor;
+		this.deleteSupplierInteractor = deleteSupplierInteractor;
 	}
 
 	@PostMapping
@@ -105,6 +110,28 @@ public class SupplierController {
 
 			var mensajeUsuario = "Error al actualizar proveedor";
 			suppliersResponse.getMensajes().add(mensajeUsuario);
+		}
+		return new ResponseEntity<>(suppliersResponse, httpStatusCode);
+	}
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity<SuppliersResponse> eliminar(@PathVariable UUID id) {
+
+		var httpStatusCode = HttpStatus.ACCEPTED;
+		var suppliersResponse = new SuppliersResponse();
+
+		try {
+			deleteSupplierInteractor.execute(id);
+			suppliersResponse.getMensajes().add("Proveedor eliminado correctamente");
+		} catch (final InventorySystemException exception) {
+			httpStatusCode = HttpStatus.BAD_REQUEST;
+			suppliersResponse.getMensajes().add(exception.getUserMessage());
+		} catch (final Exception exception) {
+			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
+
+			var mensajeUsuario = "Error al eliminar proveedor";
+			suppliersResponse.getMensajes().add(mensajeUsuario);
+
 		}
 		return new ResponseEntity<>(suppliersResponse, httpStatusCode);
 	}
