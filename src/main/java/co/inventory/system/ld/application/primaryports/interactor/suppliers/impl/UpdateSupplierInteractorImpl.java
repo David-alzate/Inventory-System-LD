@@ -8,6 +8,8 @@ import co.inventory.system.ld.application.primaryports.mapper.suppliers.Supplier
 import co.inventory.system.ld.application.usecase.suppliers.UpdateSupplier;
 import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemException;
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
+import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
+import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
 import jakarta.transaction.Transactional;
 
 @Service
@@ -28,8 +30,8 @@ public class UpdateSupplierInteractorImpl implements UpdateSupplierInteractor {
 		} catch (InventorySystemException exception) {
 			throw exception;
 		} catch (Exception exception) {
-			var userMessage = "Se ha presentado un problema modificando el proveedor";
-			var technicalMessage = "Se ha presentado un problema INESPERADO modificando el proveedor";
+			var userMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00099);
+			var technicalMessage = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00100);
 
 			throw new InteractorInventorySystemException(userMessage, technicalMessage, exception);
 

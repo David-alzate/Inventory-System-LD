@@ -101,14 +101,14 @@ public class SupplierController {
 		try {
 			supplierDTO.setId(id);
 			updateSupplierInteractor.execute(supplierDTO);
-			suppliersResponse.getMensajes().add("Proveedor actualizado correctamente");
+			suppliersResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00101));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			suppliersResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Error al actualizar proveedor";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00099);
 			suppliersResponse.getMensajes().add(mensajeUsuario);
 		}
 		return new ResponseEntity<>(suppliersResponse, httpStatusCode);
@@ -122,14 +122,14 @@ public class SupplierController {
 
 		try {
 			deleteSupplierInteractor.execute(id);
-			suppliersResponse.getMensajes().add("Proveedor eliminado correctamente");
+			suppliersResponse.getMensajes().add(MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00103));
 		} catch (final InventorySystemException exception) {
 			httpStatusCode = HttpStatus.BAD_REQUEST;
 			suppliersResponse.getMensajes().add(exception.getUserMessage());
 		} catch (final Exception exception) {
 			httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
-			var mensajeUsuario = "Error al eliminar proveedor";
+			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(MessageCode.M00102);
 			suppliersResponse.getMensajes().add(mensajeUsuario);
 
 		}

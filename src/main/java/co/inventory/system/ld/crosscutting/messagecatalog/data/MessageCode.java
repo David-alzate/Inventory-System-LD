@@ -128,41 +128,51 @@ public enum MessageCode {
 
 	M00083(MessageType.USER, CategoryMessage.SUCCESS, "00083", true),
 	M00084(MessageType.USER, CategoryMessage.SUCCESS, "00084", true),
-	
+
 	// User Type - Exceptions
-	
+
 	M00085(MessageType.USER, CategoryMessage.ERROR, "00085", true),
 	M00086(MessageType.USER, CategoryMessage.ERROR, "00086", true),
 	M00087(MessageType.USER, CategoryMessage.ERROR, "00087", true),
-	
-	// Product Update - Exception 
+
+	// Product Update - Exception
 	M00088(MessageType.USER, CategoryMessage.ERROR, "00088", true),
-	
+
 	// Product Update - Interactor and controller
-	
+
 	M00089(MessageType.USER, CategoryMessage.ERROR, "00089", true),
 	M00090(MessageType.USER, CategoryMessage.ERROR, "00090", true),
-	
+
 	M00091(MessageType.USER, CategoryMessage.SUCCESS, "00091", true),
-	
+
 	// Product Delete - Interactor and controller
-	
+
 	M00092(MessageType.USER, CategoryMessage.ERROR, "00092", true),
 	M00093(MessageType.USER, CategoryMessage.SUCCESS, "00093", true),
-	
+
 	// Product Type Update - Interactor and controller
-	
+
 	M00094(MessageType.USER, CategoryMessage.ERROR, "00094", true),
 	M00095(MessageType.USER, CategoryMessage.ERROR, "00095", true),
-	
-	M00096(MessageType.USER, CategoryMessage.SUCCESS, "00096", true),
-	
-	// Product Type Delete - Interactor and controller
-	
-	M00097(MessageType.USER, CategoryMessage.ERROR, "00097", true),
-	M00098(MessageType.USER, CategoryMessage.SUCCESS, "00098", true);
 
-	
+	M00096(MessageType.USER, CategoryMessage.SUCCESS, "00096", true),
+
+	// Product Type Delete - Interactor and controller
+
+	M00097(MessageType.USER, CategoryMessage.ERROR, "00097", true),
+	M00098(MessageType.USER, CategoryMessage.SUCCESS, "00098", true),
+
+	// Supplier Update - Interactor and controller
+
+	M00099(MessageType.USER, CategoryMessage.ERROR, "00099", true),
+	M00100(MessageType.USER, CategoryMessage.ERROR, "00100", true),
+
+	M00101(MessageType.USER, CategoryMessage.SUCCESS, "00101", true),
+
+	// Supplier Delete - Interactor and controller
+
+	M00102(MessageType.USER, CategoryMessage.ERROR, "00102", true),
+	M00103(MessageType.USER, CategoryMessage.SUCCESS, "00103", true);
 
 	private MessageType type;
 	private CategoryMessage category;
