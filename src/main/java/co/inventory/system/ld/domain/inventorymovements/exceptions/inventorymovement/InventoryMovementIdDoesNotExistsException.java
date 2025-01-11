@@ -4,12 +4,14 @@ import co.inventory.system.ld.crosscutting.exceptions.RuleInventorySystemExcepti
 
 public class InventoryMovementIdDoesNotExistsException extends RuleInventorySystemException {
 
-    public InventoryMovementIdDoesNotExistsException(String userMessage) {
-        super(userMessage, userMessage, new Exception());
-    }
+	private static final long serialVersionUID = 1L;
 
-    public static InventoryMovementIdDoesNotExistsException create(){
-        var userMessage = "El id de movimiento de inventario no existe en el sistema";
-        return new InventoryMovementIdDoesNotExistsException(userMessage);
-    }
+	public InventoryMovementIdDoesNotExistsException(String userMessage) {
+		super(userMessage, userMessage, new Exception());
+	}
+
+	public static InventoryMovementIdDoesNotExistsException create() {
+		var userMessage = "El id de movimiento de inventario no existe en el sistema";
+		return new InventoryMovementIdDoesNotExistsException(userMessage);
+	}
 }
