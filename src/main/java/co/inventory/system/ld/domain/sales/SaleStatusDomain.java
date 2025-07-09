@@ -10,7 +10,7 @@ public class SaleStatusDomain extends Domain {
 
     public SaleStatusDomain(UUID id, String name) {
         super(id);
-        this.name = name;
+        setName(name);
     }
 
     public String getName() {
