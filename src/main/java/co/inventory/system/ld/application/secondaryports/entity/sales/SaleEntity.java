@@ -20,7 +20,7 @@ public class SaleEntity {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name = "id_user")
     private UserEntity user;
 
     private LocalDateTime orderDate;

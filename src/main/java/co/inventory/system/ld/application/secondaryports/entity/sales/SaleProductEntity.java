@@ -17,7 +17,7 @@ public class SaleProductEntity {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "sale")
+    @JoinColumn(name = "id_sale")
     private SaleEntity sale;
 
     @ManyToOne(fetch = FetchType.LAZY)
