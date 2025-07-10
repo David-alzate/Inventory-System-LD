@@ -7,16 +7,16 @@ import org.springframework.stereotype.Service;
 import co.inventory.system.ld.application.primaryports.dto.users.UserDTO;
 import co.inventory.system.ld.application.primaryports.interactor.users.GetUserInteractor;
 import co.inventory.system.ld.application.primaryports.mapper.users.UserDTOMapper;
-import co.inventory.system.ld.application.usecase.users.GetUser;
+import co.inventory.system.ld.application.usecase.users.GetUsers;
 import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
 public class GetUserInteractorImpl implements GetUserInteractor {
 
-	private final GetUser getUser;
+	private final GetUsers getUser;
 
-	public GetUserInteractorImpl(GetUser getUser) {
+	public GetUserInteractorImpl(GetUsers getUser) {
 		this.getUser = getUser;
 	}
 
