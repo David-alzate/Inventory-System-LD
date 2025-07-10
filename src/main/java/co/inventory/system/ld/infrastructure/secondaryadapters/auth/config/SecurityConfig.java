@@ -2,6 +2,7 @@ package co.inventory.system.ld.infrastructure.secondaryadapters.auth.config;
 
 import co.inventory.system.ld.crosscutting.helpers.JwtHelper;
 import co.inventory.system.ld.infrastructure.secondaryadapters.auth.security.JwtTokenValidator;
+import co.inventory.system.ld.infrastructure.secondaryadapters.auth.service.UserDetailServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -31,7 +32,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity.csrf(csrf -> csrf.disable()).httpBasic(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(http -> {
@@ -41,13 +42,13 @@ public class SecurityConfig {
                 }).addFilterBefore(new JwtTokenValidator(jwtHelper), BasicAuthenticationFilter.class).build();
     }
 
-    /*@Bean
-    public AuthenticationProvider authenticationProvider(UserDetailServiceImpl userDetailsService , PasswordEncoder passwordEncoder){
+    @Bean
+    public AuthenticationProvider authenticationProvider(UserDetailServiceImpl userDetailsService, PasswordEncoder passwordEncoder) {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setPasswordEncoder(passwordEncoder);
         provider.setUserDetailsService(userDetailsService);
         return provider;
-    }*/
+    }
 
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
