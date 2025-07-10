@@ -272,6 +272,23 @@ public class MessageCatalogBase implements MessageCatalog {
 				"Se ha presentado un problema eliminando el tipo de producto"));
 		messages.put(MessageCode.M00098.getIdentifer(), new Message(MessageCode.M00098,
 				"Tipo de Producto eliminado existosamente"));
+		
+		// Supplier Update - Interactor and controller
+		
+		messages.put(MessageCode.M00099.getIdentifer(), new Message(MessageCode.M00099,
+				"Se ha presentado un problema modificando el proveedor"));
+		messages.put(MessageCode.M00100.getIdentifer(), new Message(MessageCode.M00100,
+				"Se ha presentado un problema INESPERADO modificando el proveedor"));
+		
+		messages.put(MessageCode.M00101.getIdentifer(), new Message(MessageCode.M00101,
+				"Proveedor actualizado correctamente"));
+		
+		// Supplier Delete - Interactor and controller
+		
+		messages.put(MessageCode.M00102.getIdentifer(), new Message(MessageCode.M00102,
+				"Se ha presentado un problema eliminando el proveedor"));
+		messages.put(MessageCode.M00103.getIdentifer(), new Message(MessageCode.M00103,
+				"Proveedor eliminado correctamente"));
 	
 		
 	}
