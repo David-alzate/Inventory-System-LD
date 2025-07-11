@@ -33,6 +33,7 @@ public class JwtTokenValidator extends OncePerRequestFilter {
 
         if (jwtToken == null || !jwtToken.startsWith("Bearer")){
             filterChain.doFilter(request,response);
+            return;
         }
 
         try {
