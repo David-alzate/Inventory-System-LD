@@ -5,5 +5,5 @@ import co.inventory.system.ld.domain.commons.IdTypeDomain;
 
 import java.util.List;
 
-public interface GetIdType extends UseCaseWithReturn <IdTypeDomain, List<IdTypeDomain>>{
+public interface  GetIdType extends UseCaseWithReturn <IdTypeDomain, List<IdTypeDomain>>{
 }
