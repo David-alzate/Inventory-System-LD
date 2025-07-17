@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.4.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from userTypeRepository -->
 	</parent>
 	<groupId>co.inventory.system</groupId>
 	<artifactId>Inventory-System-LD</artifactId>
@@ -60,6 +60,16 @@
 			<artifactId>mapstruct-processor</artifactId>
 			<version>1.5.5.Final</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
 

@@ -8,6 +8,7 @@ import co.inventory.system.ld.crosscutting.exceptions.InteractorInventorySystemE
 import co.inventory.system.ld.crosscutting.exceptions.InventorySystemException;
 import co.inventory.system.ld.crosscutting.messagecatalog.MessageCatalogStrategy;
 import co.inventory.system.ld.crosscutting.messagecatalog.data.MessageCode;
+import co.inventory.system.ld.infrastructure.primaryadapters.controller.response.users.AuthResponse;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +23,11 @@ public class RegisterNewUserInteractorImpl implements RegisterNewUserInteractor 
     }
 
     @Override
-    public void execute(RegisterNewUserDTO data) {
+    public AuthResponse execute(RegisterNewUserDTO data) {
 
         try {
             var userDomain = RegisterNewUserDTOMapper.INSTANCE.toDomain(data);
-            registerNewUser.execute(userDomain);
+            return registerNewUser.execute(userDomain);
         } catch (InventorySystemException exception) {
             throw exception;
         } catch (Exception exception) {
