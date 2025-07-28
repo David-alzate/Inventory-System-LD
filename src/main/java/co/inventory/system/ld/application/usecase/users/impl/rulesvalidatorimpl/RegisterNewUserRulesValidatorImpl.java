@@ -1,16 +1,8 @@
 package co.inventory.system.ld.application.usecase.users.impl.rulesvalidatorimpl;
 
+import co.inventory.system.ld.application.usecase.users.rulesvalidator.*;
 import org.springframework.stereotype.Service;
 
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserEmailRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserIdNumberRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserIdRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserIdTypeRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserLastNameRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserNameRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserStatusRulesValidator;
-import co.inventory.system.ld.application.usecase.users.rulesvalidator.RegisterNewUserUserTypeRulesValidator;
 import co.inventory.system.ld.domain.users.UserDomain;
 
 @Service
@@ -24,15 +16,16 @@ public class RegisterNewUserRulesValidatorImpl implements RegisterNewUserRulesVa
 	private final RegisterNewUserUserTypeRulesValidator registerNewUserUserTypeRulesValidator;
 	private final RegisterNewUserIdTypeRulesValidator registerNewUserIdTypeRulesValidator;
 	private final RegisterNewUserStatusRulesValidator registerNewUserStatusRulesValidator;
+	private final RegisterNewUserPasswordRulesValidator registerNewUserPasswordRulesValidator;
 
 	public RegisterNewUserRulesValidatorImpl(RegisterNewUserIdRulesValidator registerNewUserIdRulesValidator,
-			RegisterNewUserNameRulesValidator registerNewUserNameRulesValidator,
-			RegisterNewUserLastNameRulesValidator registerNewUserLastNameRulesValidator,
-			RegisterNewUserEmailRulesValidator registerNewUserEmailRulesValidator,
-			RegisterNewUserIdNumberRulesValidator registerNewUserIdNumberRulesValidator,
-			RegisterNewUserUserTypeRulesValidator registerNewUserUserTypeRulesValidator,
-			RegisterNewUserIdTypeRulesValidator registerNewUserIdTypeRulesValidator,
-			RegisterNewUserStatusRulesValidator registerNewUserStatusRulesValidator) {
+                                             RegisterNewUserNameRulesValidator registerNewUserNameRulesValidator,
+                                             RegisterNewUserLastNameRulesValidator registerNewUserLastNameRulesValidator,
+                                             RegisterNewUserEmailRulesValidator registerNewUserEmailRulesValidator,
+                                             RegisterNewUserIdNumberRulesValidator registerNewUserIdNumberRulesValidator,
+                                             RegisterNewUserUserTypeRulesValidator registerNewUserUserTypeRulesValidator,
+                                             RegisterNewUserIdTypeRulesValidator registerNewUserIdTypeRulesValidator,
+                                             RegisterNewUserStatusRulesValidator registerNewUserStatusRulesValidator, RegisterNewUserPasswordRulesValidator registerNewUserPasswordRulesValidator) {
 		this.registerNewUserIdRulesValidator = registerNewUserIdRulesValidator;
 		this.registerNewUserNameRulesValidator = registerNewUserNameRulesValidator;
 		this.registerNewUserLastNameRulesValidator = registerNewUserLastNameRulesValidator;
@@ -41,7 +34,8 @@ public class RegisterNewUserRulesValidatorImpl implements RegisterNewUserRulesVa
 		this.registerNewUserUserTypeRulesValidator = registerNewUserUserTypeRulesValidator;
 		this.registerNewUserIdTypeRulesValidator = registerNewUserIdTypeRulesValidator;
 		this.registerNewUserStatusRulesValidator = registerNewUserStatusRulesValidator;
-	}
+        this.registerNewUserPasswordRulesValidator = registerNewUserPasswordRulesValidator;
+    }
 
 	@Override
 	public void validate(UserDomain data) {
@@ -53,5 +47,6 @@ public class RegisterNewUserRulesValidatorImpl implements RegisterNewUserRulesVa
 		registerNewUserUserTypeRulesValidator.validate(data);
 		registerNewUserIdTypeRulesValidator.validate(data);
 		registerNewUserStatusRulesValidator.validate(data);
+		registerNewUserPasswordRulesValidator.validate(data);
 	}
 }
