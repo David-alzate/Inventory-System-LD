@@ -21,15 +21,11 @@ public class UserIdNumberForUserTypeDoesNotExistsRuleImpl implements UserIdNumbe
 	@Override
 	public void validate(UserDomain data) {
 
-		var userFilter = UserEntity.create().setIdNumber(data.getIdNumber())
-				.setUserType(UserTypeEntityMapper.INSTANCE.toEntity(data.getUserType()));
-
-		var results = userRepository.findByFilter(userFilter);
+		var results = userRepository.findAllByIdNumberAndUserTypeId(data.getIdNumber(), data.getUserType().getId());
 
 		if (!results.isEmpty()) {
 			throw UserIdNumberForUserTypeDoesExistsException.create();
 		}
 
 	}
-
 }

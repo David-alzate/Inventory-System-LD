@@ -51,7 +51,7 @@ public class RegisterNewUserImpl implements RegisterNewUser {
 				.setIdType(IdTypeEntityMapper.INSTANCE.toEntity(domain.getIdType()))
 				.setIdNumber(domain.getIdNumber())
 				.setEmail(domain.getEmail())
-				.setUserType(UserTypeEntity.create().setId(UserTypeEnum.USER.getId()))
+				.setUserType(UserTypeEntity.create().setId(domain.getUserType().getId()))
 				.setStatus(StatusEntity.create().setId(StatusEnum.ACTIVE.getId()))
 				.setPassword(encodedPassword);
 

@@ -60,7 +60,6 @@ public class AuthController {
         }catch (Exception exception){
             httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
             authResponse.getMessages().add("Error al crear el usuario");
-            exception.printStackTrace();
         }
         return new ResponseEntity<>(authResponse, httpStatusCode);
     }
