@@ -5,9 +5,9 @@ import co.inventory.system.ld.infrastructure.primaryadapters.controller.response
 
 import java.util.ArrayList;
 
-public class SaleResponse extends Response<SaleDTO> {
+public class RegisterNewSaleResponse extends Response<SaleDTO> {
 
-    public SaleResponse() {
+    public RegisterNewSaleResponse() {
         setMensajes(new ArrayList<String>());
         setDatos(new ArrayList<>());
     }
