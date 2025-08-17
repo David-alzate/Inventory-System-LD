@@ -75,39 +75,44 @@ public class SaleEntity {
         return user;
     }
 
-    public void setUser(UserEntity user) {
+    public SaleEntity setUser(UserEntity user) {
         this.user = ObjectHelper.getDefault(user, UserEntity.create());
+        return this;
     }
 
     public LocalDateTime getOrderDate() {
         return orderDate;
     }
 
-    public void setOrderDate(LocalDateTime orderDate) {
+    public SaleEntity setOrderDate(LocalDateTime orderDate) {
         this.orderDate = orderDate;
+        return this;
     }
 
     public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public SaleEntity setTotal(BigDecimal total) {
         this.total = total;
+        return this;
     }
 
     public List<SaleProductEntity> getSaleProducts() {
         return saleProducts;
     }
 
-    public void setSaleProducts(List<SaleProductEntity> saleProducts) {
+    public SaleEntity setSaleProducts(List<SaleProductEntity> saleProducts) {
         this.saleProducts = saleProducts;
+        return this;
     }
 
     public SaleStatusEntity getSaleStatus() {
         return saleStatus;
     }
 
-    public void setSaleStatus(SaleStatusEntity saleStatus) {
+    public SaleEntity setSaleStatus(SaleStatusEntity saleStatus) {
         this.saleStatus = ObjectHelper.getDefault(saleStatus, SaleStatusEntity.create());
+        return this;
     }
 }

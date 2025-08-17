@@ -34,9 +34,11 @@ public class SaleController {
         } catch (final InventorySystemException excepcion) {
             httpStatusCode = HttpStatus.BAD_REQUEST;
             saleResponse.getMensajes().add(excepcion.getUserMessage());
+            excepcion.printStackTrace();
         }catch (final Exception excepcion) {
             httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
             saleResponse.getMensajes().add("Se ha producido un error inesperado en el sistema");
+            excepcion.printStackTrace();
         }
         return new ResponseEntity<>(saleResponse, httpStatusCode);
     }

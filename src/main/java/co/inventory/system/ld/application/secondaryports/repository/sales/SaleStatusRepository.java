@@ -8,4 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface SaleStatusRepository extends JpaRepository<SaleStatusEntity, UUID> {
+    SaleStatusEntity findByName(String name);
 }
