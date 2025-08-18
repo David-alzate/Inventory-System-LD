@@ -67,8 +67,9 @@ public class SaleEntity {
         return id;
     }
 
-    public void setId(UUID id) {
+    public SaleEntity setId(UUID id) {
         this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
+        return this;
     }
 
     public UserEntity getUser() {
