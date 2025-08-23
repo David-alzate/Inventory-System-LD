@@ -37,11 +37,10 @@ public class RegisterNewSaleImpl implements RegisterNewSale {
     }
 
     @Override
-    public UUID execute(SaleDomain domain) {
+    public void execute(SaleDomain domain) {
         registerNewSaleRulesValidator.validate(domain);
 
-        UUID id = UUIDHelper.generate();
-        SaleEntity saleEntity = SaleEntity.create().setId(id)
+        SaleEntity saleEntity = SaleEntity.create()
                 .setUser(UserEntityMapper.INSTANCE.toEntity(domain.getUser()))
                 .setOrderDate(LocalDateTime.now().withSecond(0).withNano(0))
                 .setSaleStatus(SaleStatusEntityMapper.INSTANCE.toEntity(domain.getSaleStatus()).setId(SaleStatusEnum.PENDING.getId()))
@@ -72,6 +71,5 @@ public class RegisterNewSaleImpl implements RegisterNewSale {
         saleEntity.setTotal(total);
 
         saleRepository.save(saleEntity);
-        return id;
     }
 }
