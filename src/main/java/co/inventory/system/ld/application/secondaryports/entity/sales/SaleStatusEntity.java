@@ -41,15 +41,17 @@ public class SaleStatusEntity {
         return id;
     }
 
-    public void setId(UUID id) {
+    public SaleStatusEntity setId(UUID id) {
         this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public SaleStatusEntity setName(String name) {
         this.name = TextHelper.applyTrim(name);
+        return this;
     }
 }

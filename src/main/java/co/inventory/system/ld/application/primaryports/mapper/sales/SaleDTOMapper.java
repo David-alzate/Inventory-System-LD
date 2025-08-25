@@ -12,9 +12,9 @@ public interface SaleDTOMapper {
 
     SaleDTOMapper INSTANCE = Mappers.getMapper(SaleDTOMapper.class);
 
-    SaleDomain toDomain(SaleDTO customerDTO);
+    SaleDomain toDomain(SaleDTO saleDTO);
 
-    SaleDTO toDTO(SaleDomain customerDomain);
+    SaleDTO toDTO(SaleDomain saleDomain);
 
     List<SaleDTO> toDTOCollection(List<SaleDomain> customerDomainList);
 }

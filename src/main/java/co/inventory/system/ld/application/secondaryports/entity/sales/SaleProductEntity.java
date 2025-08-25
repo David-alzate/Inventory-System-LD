@@ -59,47 +59,53 @@ public class SaleProductEntity {
         return id;
     }
 
-    public void setId(UUID id) {
+    public SaleProductEntity setId(UUID id) {
         this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
+        return this;
     }
 
     public SaleEntity getSale() {
         return sale;
     }
 
-    public void setSale(SaleEntity sale) {
+    public SaleProductEntity setSale(SaleEntity sale) {
         this.sale = ObjectHelper.getDefault(sale, SaleEntity.create());
+        return this;
     }
 
     public ProductEntity getProduct() {
         return product;
     }
 
-    public void setProduct(ProductEntity product) {
+    public SaleProductEntity setProduct(ProductEntity product) {
         this.product = ObjectHelper.getDefault(product, ProductEntity.create());
+        return this;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public SaleProductEntity setQuantity(int quantity) {
         this.quantity = quantity;
+        return this;
     }
 
     public BigDecimal getUnitPrice() {
         return unitPrice;
     }
 
-    public void setUnitPrice(BigDecimal unitPrice) {
+    public SaleProductEntity setUnitPrice(BigDecimal unitPrice) {
         this.unitPrice = unitPrice;
+        return this;
     }
 
     public BigDecimal getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(BigDecimal subtotal) {
+    public SaleProductEntity setSubtotal(BigDecimal subtotal) {
         this.subtotal = subtotal;
+        return this;
     }
 }
